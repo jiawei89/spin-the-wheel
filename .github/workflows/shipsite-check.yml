@@ -66,12 +66,12 @@ jobs:
           path: |
             ~/.shipsite/qa
             ~/.cache/ms-playwright
-          key: shipsite-qa-${{ runner.os }}-${{ runner.arch }}-1.8.25
+          key: shipsite-qa-${{ runner.os }}-${{ runner.arch }}-1.8.27
       - name: Run the ShipSite build check
         env:
           SHIPSITE_CHECK_ID: ${{ inputs.check_id }}
           SHIPSITE_VERSION_ID: ${{ inputs.version_id }}
-        run: npx -y --package https://shipsite.ai/link/shipsite-link-1.8.25.tgz shipsite-link --ci-check
+        run: npx -y --package https://shipsite.ai/link/shipsite-link-1.8.27.tgz shipsite-link --ci-check
       - name: See what is worth keeping
         id: keep
         if: ${{ always() && runner.environment == 'github-hosted' }}
@@ -136,7 +136,7 @@ jobs:
           path: |
             ~/.shipsite/qa
             ~/.cache/ms-playwright
-          key: shipsite-qa-${{ runner.os }}-${{ runner.arch }}-1.8.25
+          key: shipsite-qa-${{ runner.os }}-${{ runner.arch }}-1.8.27
       - name: Name this week's cache entry
         id: cache-week
         shell: bash
@@ -158,7 +158,7 @@ jobs:
           SHIPSITE_REPO_DIR: ${{ github.workspace }}/repo
           SHIPSITE_CHECK_ID: ${{ inputs.check_id }}
           SHIPSITE_VERSION_ID: ${{ inputs.version_id }}
-        run: npx -y --package https://shipsite.ai/link/shipsite-link-1.8.25.tgz shipsite-link --agent-session
+        run: npx -y --package https://shipsite.ai/link/shipsite-link-1.8.27.tgz shipsite-link --agent-session
       - name: See what is worth keeping
         id: keep
         if: ${{ always() && runner.environment == 'github-hosted' }}
@@ -228,14 +228,14 @@ jobs:
           path: |
             ~/.shipsite/qa
             ~/.cache/ms-playwright
-          key: shipsite-qa-${{ runner.os }}-${{ runner.arch }}-1.8.25
+          key: shipsite-qa-${{ runner.os }}-${{ runner.arch }}-1.8.27
       - name: Run the ShipSite read-only session
         env:
           SHIPSITE_REPO_DIR: ${{ github.workspace }}/repo
           SHIPSITE_CHECK_ID: ${{ inputs.check_id }}
           SHIPSITE_VERSION_ID: ${{ inputs.version_id }}
           SHIPSITE_SESSION_REPOSITORY_ACCESS: read
-        run: npx -y --package https://shipsite.ai/link/shipsite-link-1.8.25.tgz shipsite-link --agent-session
+        run: npx -y --package https://shipsite.ai/link/shipsite-link-1.8.27.tgz shipsite-link --agent-session
       - name: See what is worth keeping
         id: keep
         if: ${{ always() && runner.environment == 'github-hosted' }}
