@@ -24,7 +24,7 @@ export type UiStrings = {
   entriesCountOne: string;
   entriesCountMany: string;
   presetLabel: string;
-  presetPlaceholder: string;
+  presetSample: string;
   rangeLabel: string;
   rangeFrom: string;
   rangeTo: string;
@@ -187,7 +187,7 @@ const en: UiStrings = {
   entriesCountOne: "1 entry on the wheel",
   entriesCountMany: "{n} entries on the wheel",
   presetLabel: "Load preset",
-  presetPlaceholder: "Load preset…",
+  presetSample: "Starter wheel (8 names)",
   rangeLabel: "Range",
   rangeFrom: "From",
   rangeTo: "To",

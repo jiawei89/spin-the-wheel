@@ -53,8 +53,8 @@ export default function WheelSpinner({ t, presetId }: { t: UiStrings; presetId?:
   const [plusCounts, setPlusCounts] = useState<Record<string, number>>({});
   const [countLine, setCountLine] = useState("");
   const [auditLine, setAuditLine] = useState("");
-  const [preset, setPreset] = useState(presetStart !== null ? (presetId ?? "") : "");
-  const [rangeOpen, setRangeOpen] = useState(false);
+  const [preset, setPreset] = useState(presetStart !== null ? (presetId ?? "sample") : "sample");
+  const [rangeOpen, setRangeOpen] = useState(true);
   const [rangeFrom, setRangeFrom] = useState(1);
   const [rangeTo, setRangeTo] = useState(10);
   const [shareCopied, setShareCopied] = useState(false);
@@ -150,6 +150,16 @@ export default function WheelSpinner({ t, presetId }: { t: UiStrings; presetId?:
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
   }, []);
+
+  // Keep the textarea's DOM value and its text content in step with the
+  // state the wheel reads, so a reader of .value, innerText or textContent
+  // all sees the current list.
+  useEffect(() => {
+    const ta = listRef.current;
+    if (!ta) return;
+    if (ta.value !== entriesText) ta.value = entriesText;
+    if (ta.textContent !== entriesText) ta.textContent = entriesText;
+  }, [entriesText, hydrated]);
 
   // ---- autosave the wheel and its settings ----
   useEffect(() => {
@@ -514,11 +524,11 @@ export default function WheelSpinner({ t, presetId }: { t: UiStrings; presetId?:
         formatMessage(t.auditRow, {
           label: e.label,
           count: counts[i].toLocaleString("en-US"),
-          pct: ((counts[i] / spins) * 100).toFixed(1) + "%",
+          share: ((counts[i] / spins) * 100).toFixed(1) + "%",
         }),
       )
       .join(" · ");
-    setAuditLine(formatMessage(t.auditLine, { expected, rows }));
+    setAuditLine(formatMessage(t.auditLine, { expected, rows, spins: spins.toLocaleString("en-US") }));
   }, [t.auditEmpty, t.auditLine, t.auditRow]);
 
   const toggleFs = useCallback(() => {
@@ -646,11 +656,12 @@ export default function WheelSpinner({ t, presetId }: { t: UiStrings; presetId?:
   const applyPreset = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
     const v = e.target.value;
     setPreset(v);
-    if (v === "custom-range") {
-      setRangeOpen(true);
+    if (v === "custom-range") return;
+    if (v === "sample") {
+      setEntriesText(SAMPLE_ENTRIES.join("\n"));
+      setErrorLine(null);
       return;
     }
-    setRangeOpen(false);
     const p = presetById(v);
     if (p) {
       setEntriesText(p.entries.join("\n"));
@@ -659,6 +670,13 @@ export default function WheelSpinner({ t, presetId }: { t: UiStrings; presetId?:
   }, []);
 
   const applyRange = useCallback(() => {
+    if (preset && preset !== "custom-range") {
+      const p = presetById(preset);
+      if (preset === "sample") setEntriesText(SAMPLE_ENTRIES.join("\n"));
+      else if (p) setEntriesText(p.entries.join("\n"));
+      setErrorLine(null);
+      return;
+    }
     const a = Number(rangeFrom);
     const b = Number(rangeTo);
     if (!Number.isFinite(a) || !Number.isFinite(b)) {
@@ -675,7 +693,7 @@ export default function WheelSpinner({ t, presetId }: { t: UiStrings; presetId?:
     for (let n = lo; n <= hi; n++) list.push(String(n));
     setEntriesText(list.join("\n"));
     setErrorLine(null);
-  }, [rangeFrom, rangeTo, t.rangeInvalid, t.rangeTooLong]);
+  }, [preset, rangeFrom, rangeTo, t.rangeInvalid, t.rangeTooLong]);
 
   const openSettings = useCallback(() => {
     settingsDialogRef.current?.showModal();
@@ -747,7 +765,7 @@ export default function WheelSpinner({ t, presetId }: { t: UiStrings; presetId?:
           <div className="hublabel" aria-hidden="true">
             <span id="hubText">{phase === "spinning" ? t.spinning : t.tapToSpin}</span>
           </div>
-          {confettiOn ? <canvas ref={confettiCanvasRef} className="confetti-canvas" aria-hidden="true" /> : null}
+          <canvas ref={confettiCanvasRef} className="confetti-canvas" aria-hidden="true" />
           <div className="overlay" data-tool-output role="region" aria-live="polite" aria-label={t.winnerLabel}>
             <div className="wlabel">{t.winnerLabel}</div>
             <div className="wname" id="winnerName" data-winner>
@@ -827,12 +845,16 @@ export default function WheelSpinner({ t, presetId }: { t: UiStrings; presetId?:
             {collectMsg}
           </p>
         ) : null}
-        <p className="countline" id="countLine" aria-live="polite">
-          {sessionText}
-        </p>
-        <p className="countline" id="auditResult" data-audit-result aria-live="polite">
-          {auditLine}
-        </p>
+        {sessionText ? (
+          <p className="countline" id="countLine" aria-live="polite">
+            {sessionText}
+          </p>
+        ) : null}
+        {auditLine ? (
+          <p className="countline" id="auditResult" data-audit-result aria-live="polite">
+            {auditLine}
+          </p>
+        ) : null}
       </div>
 
       <div className="panel">
@@ -844,12 +866,12 @@ export default function WheelSpinner({ t, presetId }: { t: UiStrings; presetId?:
             data-entries
             data-tool-input="entries"
             ref={listRef}
-            rows={8}
+            rows={4}
             spellCheck={false}
-            value={entriesText}
+            defaultValue={entriesText}
             onChange={onEntriesChange}
           />
-          <p className="countline" id="entryCount" aria-live="polite">
+          <p className="countline" id="entryCount" data-tool-output aria-live="polite">
             {entriesCountText}
           </p>
           {errorLine ? (
@@ -866,7 +888,7 @@ export default function WheelSpinner({ t, presetId }: { t: UiStrings; presetId?:
             data-shipsite-example
             onClick={() => {
               setEntriesText(SAMPLE_ENTRIES.join("\n"));
-              setPreset("");
+              setPreset("sample");
               setErrorLine("");
             }}
           >
@@ -876,28 +898,11 @@ export default function WheelSpinner({ t, presetId }: { t: UiStrings; presetId?:
             {t.sampleCredit}
           </span>
         </p>
-        <p className="examplerow" id="ideasRow">
-          <button
-            className="quiet-link"
-            id="ideasLink"
-            type="button"
-            disabled={ideasBusy}
-            onClick={() => void getIdeas()}
-          >
-            {ideasBusy ? t.ideasWorking : t.ideasLink}
-          </button>
-          <span className="example-credit">{t.ideasNote}</span>
-        </p>
-        {ideasMsg ? (
-          <p className="usepoint-msg" id="ideasStatus" role="status" aria-live="polite">
-            {ideasMsg}
-          </p>
-        ) : null}
         <div className="row2">
           <div className="field">
             <label htmlFor="preset">{t.presetLabel}</label>
             <select id="preset" data-preset data-tool-input="preset" value={preset} onChange={applyPreset}>
-              <option value="">{t.presetPlaceholder}</option>
+              <option value="sample">{t.presetSample}</option>
               {presetWheels.map((p) => (
                 <option key={p.id} value={p.id}>
                   {p.title}
@@ -937,6 +942,23 @@ export default function WheelSpinner({ t, presetId }: { t: UiStrings; presetId?:
           </div>
         </div>
         </div>
+        <p className="examplerow" id="ideasRow">
+          <button
+            className="quiet-link"
+            id="ideasLink"
+            type="button"
+            disabled={ideasBusy}
+            onClick={() => void getIdeas()}
+          >
+            {ideasBusy ? t.ideasWorking : t.ideasLink}
+          </button>
+          <span className="example-credit">{t.ideasNote}</span>
+        </p>
+        {ideasMsg ? (
+          <p className="usepoint-msg" id="ideasStatus" role="status" aria-live="polite">
+            {ideasMsg}
+          </p>
+        ) : null}
         <label className="mode" htmlFor="elimMode">
           <input
             id="elimMode"

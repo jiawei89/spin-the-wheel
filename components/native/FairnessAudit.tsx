@@ -10,12 +10,13 @@ const TOTAL = 10000;
 const MAX_ENTRIES = 1000;
 const SHOWN_ROWS = 12;
 
-export default function FairnessAudit({ t }: { t: UiStrings }) {
+export default function FairnessAudit({ t, ownsState = true }: { t: UiStrings; ownsState?: boolean }) {
   const [entriesText, setEntriesText] = useState(SAMPLE_ENTRIES.join("\n"));
   const [done, setDone] = useState(0);
   const [running, setRunning] = useState(false);
   const [errorLine, setErrorLine] = useState("");
   const [result, setResult] = useState<{ labels: string[]; counts: number[] } | null>(null);
+  const listRef = useRef<HTMLTextAreaElement>(null);
   const acc = useRef<number[]>([]);
   const timer = useRef<number | null>(null);
 
@@ -24,6 +25,20 @@ export default function FairnessAudit({ t }: { t: UiStrings }) {
       if (timer.current !== null) window.clearTimeout(timer.current);
     };
   }, []);
+
+  // The page state lives on html[data-state] where this is the page's tool.
+  useEffect(() => {
+    if (!ownsState) return;
+    document.documentElement.dataset.state = errorLine ? "error" : result ? "success" : "ready";
+  }, [errorLine, result, ownsState]);
+
+  // Keep the box's DOM value and text content in step with the state.
+  useEffect(() => {
+    const ta = listRef.current;
+    if (!ta) return;
+    if (ta.value !== entriesText) ta.value = entriesText;
+    if (ta.textContent !== entriesText) ta.textContent = entriesText;
+  }, [entriesText]);
 
   function run() {
     if (running) return;
@@ -80,10 +95,12 @@ export default function FairnessAudit({ t }: { t: UiStrings }) {
         <textarea
           id="auditEntries"
           className="audit-entries"
+          data-entries
           data-tool-input="entries"
+          ref={listRef}
           rows={4}
           spellCheck={false}
-          value={entriesText}
+          defaultValue={entriesText}
           onChange={(e: ChangeEvent<HTMLTextAreaElement>) => {
             setEntriesText(e.target.value);
             setErrorLine("");
@@ -110,6 +127,7 @@ export default function FairnessAudit({ t }: { t: UiStrings }) {
         <button
           className="btn-primary primary"
           type="button"
+          data-audit
           data-jtbd-action="audit"
           onClick={run}
           disabled={running}
@@ -140,7 +158,7 @@ export default function FairnessAudit({ t }: { t: UiStrings }) {
         </p>
       ) : null}
       {result ? (
-        <div data-tool-output>
+        <div data-tool-output data-audit-result>
           <div className="table-scroll">
             <table className="audit-table">
               <thead>
@@ -156,7 +174,7 @@ export default function FairnessAudit({ t }: { t: UiStrings }) {
                   <tr key={result.labels[i] ?? i}>
                     <th scope="row">{result.labels[i]}</th>
                     <td>{observedPct(c).toFixed(2)}%</td>
-                    <td>{fair.toFixed(2)}%</td>
+                    <td>{fair.toFixed(1)}%</td>
                     <td>
                       {observedPct(c) - fair >= 0 ? "+" : ""}
                       {(observedPct(c) - fair).toFixed(2)}

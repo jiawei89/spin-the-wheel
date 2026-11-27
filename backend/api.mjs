@@ -1,4 +1,4 @@
-import { json } from "./util.mjs";
+import { json, ensureSchema } from "./util.mjs";
 import { handleContact } from "./contact.mjs";
 import { handleEvents } from "./events.mjs";
 import { handleAuth } from "./auth.mjs";
@@ -16,6 +16,7 @@ export async function handleApi(request, env) {
   }
   const path = url.pathname.replace(/\/+$/, "") || "/";
   try {
+    await ensureSchema(env.DB);
     if (path === "/api/_site/contact") return await handleContact(request, env, url);
     if (path === "/api/_site/events") return await handleEvents(request, env, url);
     if (path.startsWith("/api/auth/")) return await handleAuth(request, env, url, path);

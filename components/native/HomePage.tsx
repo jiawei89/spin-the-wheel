@@ -92,7 +92,7 @@ function FairnessBand({ t }: { t: UiStrings }) {
     <div className="band">
       <h2>{t.fairnessTryTitle}</h2>
       <p className="section-lede">{t.fairnessTryLede}</p>
-      <FairnessAudit t={t} />
+      <FairnessAudit t={t} ownsState={false} />
       <p className="band-more">
         <a className="quiet-link" href="/randomness/">
           {t.fairnessTryLink}

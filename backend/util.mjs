@@ -53,6 +53,56 @@ export function accountGate(request, url) {
   );
 }
 
+// The site's schema, ensured at runtime: the migration files under
+// migrations/ are the record, but a D1 database the Worker meets that has
+// never seen them (a fresh local dev database, a new environment) would
+// otherwise answer every route with SQLITE_ERROR. Idempotent; runs once
+// per isolate, before the first request touches the database.
+const SCHEMA_DDL = [
+  `CREATE TABLE IF NOT EXISTS shipsite_contact_messages (
+  id TEXT PRIMARY KEY, path TEXT, payload TEXT, created_at TEXT NOT NULL)`,
+  `CREATE TABLE IF NOT EXISTS shipsite_events (
+  id TEXT PRIMARY KEY, name TEXT NOT NULL, path TEXT, props TEXT, occurred_at TEXT NOT NULL)`,
+  `CREATE INDEX IF NOT EXISTS idx_events_occurred ON shipsite_events (occurred_at)`,
+  `CREATE INDEX IF NOT EXISTS idx_events_name ON shipsite_events (name, occurred_at)`,
+  `CREATE TABLE IF NOT EXISTS shipsite_rate (
+  key TEXT PRIMARY KEY, window_start TEXT NOT NULL, count INTEGER NOT NULL)`,
+  `CREATE TABLE IF NOT EXISTS accounts (
+  id TEXT PRIMARY KEY, email TEXT UNIQUE, name TEXT, google_sub TEXT UNIQUE,
+  creem_customer_id TEXT, created_at TEXT NOT NULL)`,
+  `CREATE TABLE IF NOT EXISTS sessions (
+  id TEXT PRIMARY KEY, account_id TEXT NOT NULL, created_at TEXT NOT NULL, expires_at TEXT NOT NULL)`,
+  `CREATE TABLE IF NOT EXISTS oauth_states (
+  state TEXT PRIMARY KEY, return_to TEXT, created_at TEXT NOT NULL)`,
+  `CREATE TABLE IF NOT EXISTS orders (
+  id TEXT PRIMARY KEY, account_id TEXT, tier TEXT, billing TEXT, status TEXT,
+  provider TEXT DEFAULT 'creem', provider_checkout_id TEXT, provider_order_id TEXT,
+  provider_subscription_id TEXT, provider_customer_id TEXT, current_period_end TEXT,
+  created_at TEXT NOT NULL, updated_at TEXT)`,
+  `CREATE INDEX IF NOT EXISTS idx_orders_checkout ON orders (provider_checkout_id)`,
+  `CREATE INDEX IF NOT EXISTS idx_orders_account ON orders (account_id)`,
+  `CREATE INDEX IF NOT EXISTS idx_orders_subscription ON orders (provider_subscription_id)`,
+  `CREATE TABLE IF NOT EXISTS processed_events (
+  id TEXT PRIMARY KEY, applied_at TEXT NOT NULL)`,
+  `CREATE TABLE IF NOT EXISTS wheels (
+  id TEXT PRIMARY KEY, account_id TEXT NOT NULL, title TEXT, data TEXT NOT NULL,
+  created_at TEXT NOT NULL, updated_at TEXT NOT NULL)`,
+  `CREATE INDEX IF NOT EXISTS idx_wheels_account ON wheels (account_id)`,
+  `CREATE TABLE IF NOT EXISTS collect (
+  id TEXT PRIMARY KEY, account_id TEXT NOT NULL, kind TEXT, data TEXT, created_at TEXT NOT NULL)`,
+  `CREATE INDEX IF NOT EXISTS idx_collect_account ON collect (account_id)`,
+  `CREATE TABLE IF NOT EXISTS generations (
+  id TEXT PRIMARY KEY, account_id TEXT NOT NULL, kind TEXT, created_at TEXT NOT NULL)`,
+  `CREATE INDEX IF NOT EXISTS idx_generations_account ON generations (account_id, created_at)`,
+];
+
+let schemaReady = false;
+export async function ensureSchema(db) {
+  if (!db || schemaReady) return;
+  await db.batch(SCHEMA_DDL.map((sql) => db.prepare(sql)));
+  schemaReady = true;
+}
+
 // Per-visitor rate limiting, kept in D1 so every isolate agrees.
 export async function rateLimit(db, key, limit, windowMs) {
   if (!db) return true;

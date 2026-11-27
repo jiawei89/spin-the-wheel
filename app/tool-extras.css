@@ -25,6 +25,20 @@
   align-self: end;
 }
 
+/* The open range field keeps the row on one line: two 70px number inputs
+   plus the Set button need ~240px, so give it the larger flex share and
+   let the inputs shrink below their rest width instead of overflowing. */
+.rangebox.open {
+  flex: 1.7 1 250px;
+}
+.rangebox .fromto {
+  flex-wrap: wrap;
+}
+.rangebox .fromto input[type="number"] {
+  min-width: 0;
+  flex: 1 1 64px;
+}
+
 /* Links inside reading copy: distinguishable without colour. */
 .section-body a,
 .faq-a a,
