@@ -16,8 +16,6 @@ type Cta = {
   label?: string;
   href?: string;
   primary?: boolean;
-  action?: string;
-  product?: string;
 };
 type WideSection = {
   id?: string;
@@ -27,11 +25,11 @@ type WideSection = {
   table?: TableSpec;
 };
 
-// The pricing page sells exactly what the contract (monetization/1.2) sells:
-// Free $0; Plus $5/month with a $2.99 first month for new customers (offer
-// ends Dec 18, 2026); Plus yearly $48 billed yearly. The figures live in
-// lib/plan-constants.ts, the cards and billing toggle in PlanCards.tsx; the
-// prose on the page is the approved copy in content/pricing.json.
+// Free first (owner decision 2026-11-27): the pricing page says the whole
+// site is free, the plan block shows the one free card (PlanCards.tsx), and
+// the main CTA goes back to the wheel — no checkout control exists anywhere.
+// The prose is the copy in content/pricing.json; the free figures live in
+// lib/plan-constants.ts.
 export default async function PricingPage() {
   const route = findRoute("/pricing/") ?? siteConfig.routes[0];
   const content = await loadPageContent(route.contentKey, route);
@@ -42,9 +40,8 @@ export default async function PricingPage() {
   const faqSection = sections.find((s) => s.id === "faq");
   const ctas = (content.ctas ?? []) as Cta[];
   const cta = ctas.find((c) => c.primary) ?? ctas[0];
-  const product = cta?.product ?? "plus";
   const table = compare?.table;
-  const columns = table?.columns ?? ["What you get", "Free", "Plus"];
+  const columns = table?.columns ?? ["What you get", "Included"];
 
   return (
     <PageDocument route={route} content={content}>
@@ -57,12 +54,7 @@ export default async function PricingPage() {
           </div>
           {cta ? (
             <p className="pricing-cta">
-              <a
-                className="btn-primary"
-                href={`/api/pay/checkout?plan=${product}`}
-                data-shipsite-checkout
-                data-product={product}
-              >
+              <a className="btn-primary" href={cta.href ?? "/"}>
                 {cta.label}
               </a>
             </p>

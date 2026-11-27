@@ -1,15 +1,22 @@
 import { json, hex, accountGate, currentAccount } from "./util.mjs";
 
-// Selling on the owner's Creem account (the payment platform this plan chose).
-// The pricing contract sells exactly: Free $0; Plus $5/month, first month
-// $2.99 for new customers until INTRO_ENDS_AT; Plus $48/year billed yearly.
+// Selling used to run on the owner's Creem account (the payment platform this
+// plan chose): Free $0; Plus $5/month, first month $2.99 for new customers
+// until INTRO_ENDS_AT; Plus $48/year billed yearly.
 const TIERS = {
   plus: { billing: "month", productVar: "PLUS_MONTHLY_PRODUCT_ID", introVar: "PLUS_MONTHLY_INTRO_PRODUCT_ID" },
   "plus-annual": { billing: "year", productVar: "PLUS_ANNUAL_PRODUCT_ID" },
 };
 
 // Owner decision (2026-11-27): the site is free — no paid plans are offered,
-// so checkout and the billing portal refuse instead of selling. The pay
+// so checkout and the billing portal refuse instead of selling. The payment
+// keys stay configured for the later payments-on change, but meanwhile no
+// Creem product, price or webhook is created; the free wheel runs in the
+// visitor's browser and needs no account.
+const SALES_PAUSED = {
+  error: "sales_paused",
+  message: "The site is free — paid plans are not on sale today.",
+};
 
 const FREE_LIMITS = { cloudGenerations: { perMonth: 0 } };
 const PLUS_LIMITS = { cloudGenerations: { perMonth: 50 } };
@@ -166,7 +173,8 @@ async function handlePlan(request, env, url) {
   const account = await currentAccount(env, request);
   const tier = await paidTier(env, account);
   const used = account ? await generationsUsed(env, account) : 0;
-  const introEnds = env.INTRO_ENDS_AT || null;
+  // Sales are paused (the site is free): the plan endpoint reports the free
+  // limits and says so, without advertising any paid offer.
   return json({
     paid: Boolean(tier),
     plan: tier || null,
@@ -174,20 +182,16 @@ async function handlePlan(request, env, url) {
     used: { cloudGenerations: used },
     plans: {
       free: { limits: FREE_LIMITS },
-      plus: { limits: PLUS_LIMITS },
-      "plus-annual": { limits: PLUS_LIMITS },
     },
-    offers: [
-      {
-        plan: "plus",
-        ends_at: introEnds,
-        active: Boolean(introEnds && Date.now() < Date.parse(introEnds)),
-      },
-    ],
+    offers: [],
+    sales_paused: true,
   });
 }
 
 async function handleCheckout(request, env, url) {
+  // Sales are paused (the site is free): refuse before any account lookup or
+  // provider call. The plan plumbing below stays for the payments-on change.
+  return json(SALES_PAUSED, 403);
   const plan = url.searchParams.get("plan") || "plus";
   const spec = TIERS[plan];
   if (!spec) return json({ error: "unknown_plan", message: "That plan does not exist." }, 404);
@@ -266,6 +270,8 @@ async function handleReturn(request, env, url) {
 }
 
 async function handlePortal(request, env, url) {
+  // Sales are paused (the site is free): there is no billing portal to open.
+  return json(SALES_PAUSED, 403);
   const account = await currentAccount(env, request);
   if (!account) return accountGate(request, url);
   if (!account.creem_customer_id) {

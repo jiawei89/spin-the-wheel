@@ -48,7 +48,7 @@
       "path": "/pricing/",
       "contentKey": "pricing",
       "title": "Pricing – Spin the Wheel pricing",
-      "description": "Spin the Wheel is free to use on your device: wheel spins with no stated cap, the team splitter and a published randomness audit, with no account and no ads. Plus adds cloud sync, result collection and AI entry ideas.",
+      "description": "Spin the Wheel is completely free: the wheel, the presets, the random team generator and the fairness audit run in your browser with no account, no ads and no paid plan.",
       "index": true,
       "canonical": "/pricing/",
       "navLabel": "Pricing",
@@ -1799,9 +1799,9 @@
       "Split a pasted name list into N random teams drawn by crypto.getRandomValues and show each team's roster ready to copy.",
       "Run 10,000 spins of the current wheel at once and show each segment's observed frequency against the uniform expectation."
     ],
-    "requiresAuth": true,
-    "requiresBilling": true,
-    "publicSalesAllowed": true
+    "requiresAuth": false,
+    "requiresBilling": false,
+    "publicSalesAllowed": false
   },
   "runtimePrivacy": {
     "analytics": "aggregate",

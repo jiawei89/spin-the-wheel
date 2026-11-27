@@ -382,44 +382,23 @@ async function runWheelHome(page, ctx) {
     `"${audit.slice(0, 70)}"`,
   );
 
-  // 12b. the three Plus use points answer at their use point (S4)
-  await page.locator("#collectLink").click();
-  await page.waitForFunction(
-    () => ((document.querySelector("#collectStatus")?.textContent ?? "") || "").trim().length > 0,
-    null,
-    { timeout: 20000 },
-  );
-  const collectMsg = ((await page.locator("#collectStatus").textContent()) ?? "").trim();
+  // 12b. free first (owner decision 2026-11-27): the account-gated use points
+  // stay out of the tool and no paywall copy rides on it; free use is on-device.
+  for (const id of ["#cloudSaveLink", "#collectLink", "#ideasLink"]) {
+    const gone = (await page.locator(id).count()) === 0;
+    record(`${id} stays out of the free tool`, gone, gone ? "absent" : "still present");
+  }
+  const bodyText = ((await page.locator("body").textContent()) ?? "").toLowerCase();
   record(
-    "collect answers at its use point",
-    collectMsg.length > 0,
-    `"${collectMsg.slice(0, 80)}"`,
+    "wheel page carries no paywall copy",
+    !bodyText.includes("part of plus") && (await page.locator("#plusNote").count()) === 0,
+    "#plusNote absent, no 'part of Plus' copy",
   );
-
-  await page.locator("#cloudSaveLink").click();
-  await page.waitForFunction(
-    () => ((document.querySelector("#cloudStatus")?.textContent ?? "") || "").trim().length > 0,
-    null,
-    { timeout: 20000 },
-  );
-  const cloudMsg = ((await page.locator("#cloudStatus").textContent()) ?? "").trim();
+  const storedEntries = await page.evaluate(() => localStorage.getItem("stw:wheel") ?? "");
   record(
-    "cloud save answers at its use point",
-    cloudMsg.length > 0,
-    `"${cloudMsg.slice(0, 80)}"`,
-  );
-
-  await page.locator("#ideasLink").click();
-  await page.waitForFunction(
-    () => ((document.querySelector("#ideasStatus")?.textContent ?? "") || "").trim().length > 0,
-    null,
-    { timeout: 30000 },
-  );
-  const ideasMsg = ((await page.locator("#ideasStatus").textContent()) ?? "").trim();
-  record(
-    "entry ideas answer at their use point",
-    ideasMsg.length > 0,
-    `"${ideasMsg.slice(0, 80)}"`,
+    "free use keeps the wheel on this device",
+    storedEntries.trim().length > 0,
+    `${storedEntries.trim().split("\n").length} entries in local storage`,
   );
 
   // 13. fullscreen keeps the wheel the whole show
@@ -585,69 +564,43 @@ async function runPresetPage(page) {
   record("preset page wheel spins", true, "winner shown");
 }
 
-// The pricing page sells Plus on the pricing contract: intro headline price,
-// the regular price struck, "then $5", the server's deadline, both tiers'
-// checkout links, and the billing toggle that switches between them.
-async function runPricingPlus(page) {
+// Free first (owner decision 2026-11-27): the pricing page says the whole site
+// is free, sends the visitor back to the wheel, and carries no checkout
+// control; the pay routes refuse sales while the site is free.
+async function runPricingFree(page) {
   await page.goto(base + "/pricing/", { waitUntil: "domcontentloaded" });
-  const links = await page
-    .locator("[data-shipsite-checkout]")
-    .evaluateAll((els) =>
-      els.map((e) => ({ href: e.getAttribute("href"), product: e.getAttribute("data-product") })),
-    );
+  const checkouts = await page.locator("[data-shipsite-checkout]").count();
+  record("pricing: no checkout control", checkouts === 0, `${checkouts} checkout control(s)`);
+  const main = ((await page.locator("main").textContent()) ?? "").toLowerCase();
+  record("pricing: says everything is free", main.includes("free"), `"${main.slice(0, 70)}"`);
   record(
-    "pricing: both Plus tiers carry checkout links",
-    links.length >= 2 &&
-      links.some((l) => l.product === "plus") &&
-      links.some((l) => l.product === "plus-annual"),
-    links.map((l) => `${l.product}=${l.href}`).join(" | "),
+    "pricing: no paywall copy",
+    !main.includes("part of plus") && !main.includes("subscription") && !main.includes("$5"),
+    "no Plus price, offer or subscription copy",
   );
-  const body = ((await page.locator("main").textContent()) ?? "").toLowerCase();
+  const ctaCount = await page.locator('.pricing-cta a[href="/"]').count();
+  record("pricing: main CTA goes back to the wheel", ctaCount >= 1, `${ctaCount} wheel CTA(s)`);
+  const cards = await page.locator(".plan-card").count();
+  const cardText = cards > 0 ? ((await page.locator(".plan-card").first().textContent()) ?? "") : "";
   record(
-    "pricing: the free tier is still stated as free",
-    body.includes("free"),
-    "the word free is on the page",
+    "pricing: the one plan is Free at $0",
+    cards === 1 && cardText.includes("$0"),
+    `${cards} card(s), first "${cardText.slice(0, 60).trim()}"`,
   );
-  const strike = ((await page.locator(".plan-card-popular .plan-strike").first().textContent()) ?? "").trim();
-  const big = ((await page.locator(".plan-card-popular .plan-big").first().textContent()) ?? "").trim();
+  const table = await page.locator("main table").count();
+  record("pricing: what's-included table present", table >= 1, `${table} table(s)`);
   record(
-    "pricing: intro price is the headline, regular price struck",
-    strike.includes("5") && big.includes("2.99"),
-    `headline "${big}", regular struck "${strike}"`,
+    "pricing: free-use FAQ present",
+    main.includes("is spin the wheel really free") && main.includes("do i need an account"),
+    "free-use questions on the page",
   );
-  const sub = ((await page.locator(".plan-card-popular .plan-sub").first().textContent()) ?? "").trim();
-  record("pricing: says the price after the intro", /then\s*\$5/i.test(sub), `"${sub.slice(0, 70)}"`);
-  const deadline = await page
-    .locator("[data-shipsite-deadline]")
-    .first()
-    .getAttribute("data-shipsite-deadline");
-  let serverEnds = "";
-  try {
-    const res = await page.request.get(`${base}/api/pay/plan`);
-    const plan = await res.json();
-    serverEnds = String(plan?.offers?.[0]?.ends_at ?? "");
-  } catch {
-    serverEnds = "plan fetch failed";
-  }
+  const res = await page.request.get(`${base}/api/pay/checkout?plan=plus`);
+  const refused = await res.json().catch(() => ({}));
   record(
-    "pricing: deadline matches the server's one end",
-    !!deadline && deadline === serverEnds,
-    `page ${deadline} / server ${serverEnds}`,
+    "pay route refuses: sales paused",
+    res.status() === 403 && refused.error === "sales_paused",
+    `GET /api/pay/checkout -> ${res.status()} ${refused.error ?? ""}`,
   );
-  const cmp = await page.locator(".compare-table").count();
-  record("pricing: comparison table present", cmp >= 1, `${cmp} compare table(s)`);
-
-  await page.locator(".billing-toggle .toggle-btn").filter({ hasText: /year/i }).click();
-  const annualLink = page.locator('[data-shipsite-checkout][data-product="plus-annual"]');
-  await annualLink.waitFor({ state: "visible", timeout: 5000 });
-  record(
-    "billing toggle reveals the yearly plan and its checkout",
-    await annualLink.isVisible(),
-    "annual checkout visible after toggle",
-  );
-  await page.locator(".billing-toggle .toggle-btn").filter({ hasText: /month/i }).click();
-  await page.locator('[data-shipsite-checkout][data-product="plus"]').waitFor({ state: "visible", timeout: 5000 });
-  record("billing toggle returns to monthly", true, "monthly checkout visible again");
 }
 
 async function runPhone(browser) {
@@ -722,7 +675,7 @@ try {
     await phase("real input: fairness-audit on the full story", () => runRealAudit(page));
   }
 
-  await phase("pricing sells Plus per the contract", () => runPricingPlus(page));
+  await phase("pricing stays free: nothing is for sale", () => runPricingFree(page));
   await phase("wheel home: every control", () => runWheelHome(page, ctx));
   await phase("team generator: every control", () => runTeam(page));
   await phase("contact form: round trip", () => runContact(page));

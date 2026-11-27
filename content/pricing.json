@@ -1,135 +1,107 @@
 {
   "title": "Pricing – Spin the Wheel pricing",
-  "description": "Spin the Wheel is free to use on your device. Plus adds 50 cloud generations a month for $5, and your first month is $2.99.",
+  "description": "Spin the Wheel is completely free: paste entries, spin the wheel, split teams and share results — no account, no ads, nothing to buy.",
   "h1": "Spin the Wheel pricing",
-  "heroText": "Everything on this site starts free: paste your entries and [spin the wheel](/), no account needed. Plus is for people who also want cloud generations, 50 every month, while the free wheel and the [random team generator](/random-team-generator/) keep working on your device with no count. Pick the monthly plan or save with the yearly one below.",
+  "heroText": "Everything on this site is free. Paste your entries and [spin the wheel](/), split a name list with the [random team generator](/random-team-generator/) and audit the results — all in your browser, with no account and no ads. There is no paid plan, so there is nothing to check out.",
   "ctas": [
     {
-      "label": "Start with Plus",
-      "href": "/pricing/",
-      "primary": true,
-      "action": "checkout",
-      "product": "plus"
+      "label": "Spin the wheel now",
+      "href": "/",
+      "primary": true
     }
   ],
   "sections": [
     {
       "id": "plans",
-      "title": "Plans",
-      "body": "Two ways to use Spin the Wheel: the free tool on your device, or Plus with a monthly allowance of cloud generations.",
+      "title": "One plan: free",
+      "body": "The whole tool set is the free plan. There is no paid tier on this site today, so there is no billing cycle, no card and no trial to remember to cancel.",
       "items": [
         {
           "title": "Free",
-          "body": "The wheel, the presets and the random team generator run on your device, with no sign-in and no usage count. Generations are not part of the free plan."
-        },
-        {
-          "title": "Plus",
-          "body": "50 cloud generations a month for people who also want wheels, results and entry ideas to follow them across devices."
-        },
-        {
-          "title": "Plus yearly",
-          "body": "The same 50 cloud generations a month as the monthly plan, for people who know they will keep it."
+          "body": "The wheel, the presets, the random team generator and the fairness audit run on your device, with no sign-in, no ads and no usage count. What you save stays on your device and in the links you copy."
         }
       ]
     },
     {
       "id": "comparison",
-      "title": "What separates the plans",
-      "body": "Only these rows differ.",
+      "title": "What's included",
+      "body": "Everything the tool can do is included in the free plan.",
       "table": {
-        "caption": "Free vs Plus",
-        "columns": ["What you get", "Free", "Plus"],
+        "caption": "What the free plan includes",
+        "columns": ["What you get", "Included"],
         "rows": [
-          { "cells": ["Price", "$0", "$5 a month"] },
-          { "cells": ["Cloud generations a month", "None — they are not part of the free plan", "50"] },
-          { "cells": ["Wheels synced across devices", "Not included", "Up to 20 stored wheels"] },
-          { "cells": ["Participant results collected", "Not included", "Up to 100 a month"] },
-          { "cells": ["Sign-in", "Not needed", "Needed for the cloud features"] },
-          { "cells": ["Device use of the wheel", "Full, no count", "Full, no count"] }
+          { "cells": ["Wheel spins and entries", "Unlimited, in your browser"] },
+          { "cells": ["Elimination, accumulation and weighted modes", "Included"] },
+          { "cells": ["Preset wheels (yes/no, dice, coin, numbers, custom range)", "Included"] },
+          { "cells": ["Random team generator", "Included"] },
+          { "cells": ["Fairness audit (10,000 spins)", "Included"] },
+          { "cells": ["Saving a wheel", "On this device, no account"] },
+          { "cells": ["Share links and CSV export", "Included, no account"] },
+          { "cells": ["Themes and sounds", "Included"] },
+          { "cells": ["Price", "$0"] }
         ]
       }
     },
     {
       "id": "faq",
-      "title": "Billing questions",
-      "body": "The short answers on paying, cancelling and what a generation is."
+      "title": "Questions about free use",
+      "body": "The short answers on what free means here."
     }
   ],
   "faq": [
     {
-      "question": "When does the $2.99 first month end and the $5 charge start?",
-      "answer": "Your first month costs $2.99 if you are a new customer. When that month is over, the plan renews at $5 a month unless you cancel before the renewal date. The offer ends Dec 18, 2026, so a subscription started after that date is charged $5 from the first month."
+      "question": "Is Spin the Wheel really free?",
+      "answer": "Yes. Every tool on the site — the wheel, the presets, the random team generator and the fairness audit — runs in your browser at no cost, with no ads. There is no paid plan, so there is no card to add and no trial to remember to cancel."
     },
     {
-      "question": "Can I cancel?",
-      "answer": "Yes, at any time. Open Manage billing on this page to cancel in the payment provider's portal — cancelling stops the next charge, and your plan keeps running until the end of the month you already paid for. After that the site returns you to the free device tool, which needs no account."
+      "question": "Do I need an account?",
+      "answer": "No. The tools run on your device. A wheel you save stays in your browser's local storage, and share links carry your entries in the URL itself, so nothing has to be stored on a server for the wheel to work."
     },
     {
-      "question": "What counts as one generation?",
-      "answer": "One generation is one AI entry-ideas request — the ask for a list of entry ideas. Plus includes 50 a month. Syncing up to 20 wheels and collecting up to 100 participant results a month are included with Plus and do not use generations. The wheel itself, the presets, the team splitter and the fairness audit run on your device and never count."
+      "question": "How do I keep or share a wheel?",
+      "answer": "Use Share link on the wheel to copy a URL that encodes your entries and settings, or Export to download them as a CSV file. Both work without an account."
     },
     {
-      "question": "I was charged wrongly or a generation failed. What do I do?",
-      "answer": "Write through the form on the [contact page](/contact/) with the email your checkout used, the date of the charge and what happened. The owner reads every message and answers billing problems there."
-    },
-    {
-      "question": "Do you offer refunds?",
-      "answer": "There is no automatic refund policy. If a charge is wrong, or the paid allowance never worked for you, describe it in the contact form and the owner will put it right — by refund, credit or fix, case by case. The cancellation and refund terms are on the [terms page](/terms/)."
+      "question": "Will paid plans come later?",
+      "answer": "Paid plans are not for sale on this site today. If that ever changes, this page and the [terms](/terms/) will describe the billing, cancellation and refund rules before anything is charged."
     }
   ],
   "schema": {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Product",
-        "name": "Spin the Wheel Plus",
-        "description": "50 cloud generations a month for the Spin the Wheel tool set.",
-        "offers": [
-          { "@type": "Offer", "name": "Plus monthly", "price": "5.00", "priceCurrency": "USD", "category": "subscription" },
-          { "@type": "Offer", "name": "Plus yearly", "price": "48.00", "priceCurrency": "USD", "category": "subscription" }
-        ]
-      },
-      {
         "@type": "FAQPage",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "When does the $2.99 first month end and the $5 charge start?",
+            "name": "Is Spin the Wheel really free?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Your first month costs $2.99 if you are a new customer. When that month is over, the plan renews at $5 a month unless you cancel before the renewal date. The offer ends Dec 18, 2026, so a subscription started after that date is charged $5 from the first month."
+              "text": "Yes. Every tool on the site — the wheel, the presets, the random team generator and the fairness audit — runs in your browser at no cost, with no ads. There is no paid plan, so there is no card to add and no trial to remember to cancel."
             }
           },
           {
             "@type": "Question",
-            "name": "Can I cancel?",
+            "name": "Do I need an account?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, at any time. Open Manage billing on this page to cancel in the payment provider's portal — cancelling stops the next charge, and your plan keeps running until the end of the month you already paid for. After that the site returns you to the free device tool, which needs no account."
+              "text": "No. The tools run on your device. A wheel you save stays in your browser's local storage, and share links carry your entries in the URL itself, so nothing has to be stored on a server for the wheel to work."
             }
           },
           {
             "@type": "Question",
-            "name": "What counts as one generation?",
+            "name": "How do I keep or share a wheel?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "One generation is one AI entry-ideas request — the ask for a list of entry ideas. Plus includes 50 a month. Syncing up to 20 wheels and collecting up to 100 participant results a month are included with Plus and do not use generations. The wheel itself, the presets, the team splitter and the fairness audit run on your device and never count."
+              "text": "Use Share link on the wheel to copy a URL that encodes your entries and settings, or Export to download them as a CSV file. Both work without an account."
             }
           },
           {
             "@type": "Question",
-            "name": "I was charged wrongly or a generation failed. What do I do?",
+            "name": "Will paid plans come later?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Write through the form on the contact page with the email your checkout used, the date of the charge and what happened. The owner reads every message and answers billing problems there."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you offer refunds?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "There is no automatic refund policy. If a charge is wrong, or the paid allowance never worked for you, describe it in the contact form and the owner will put it right — by refund, credit or fix, case by case. The cancellation and refund terms are on the terms page."
+              "text": "Paid plans are not for sale on this site today. If that ever changes, the pricing page and the terms will describe the billing, cancellation and refund rules before anything is charged."
             }
           }
         ]

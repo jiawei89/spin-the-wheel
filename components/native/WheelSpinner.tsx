@@ -59,12 +59,6 @@ export default function WheelSpinner({ t, presetId }: { t: UiStrings; presetId?:
   const [rangeTo, setRangeTo] = useState(10);
   const [shareCopied, setShareCopied] = useState(false);
   const [exportLine, setExportLine] = useState("");
-  const [cloudBusy, setCloudBusy] = useState(false);
-  const [cloudMsg, setCloudMsg] = useState("");
-  const [ideasBusy, setIdeasBusy] = useState(false);
-  const [ideasMsg, setIdeasMsg] = useState("");
-  const [collectBusy, setCollectBusy] = useState(false);
-  const [collectMsg, setCollectMsg] = useState("");
   const [lastRemoved, setLastRemoved] = useState<{ label: string; index: number } | null>(null);
   const [fsActive, setFsActive] = useState(false);
   const [confettiOn, setConfettiOn] = useState(false);
@@ -539,87 +533,11 @@ export default function WheelSpinner({ t, presetId }: { t: UiStrings; presetId?:
     }
   }, []);
 
-  // ---- Plus use points (S4): cloud sync, entry ideas, result collection ----
-  // Honest at the use point: a free visitor's click reaches the Worker, which
-  // answers plan_required with its own upgrade line; that message shows as is.
-  const callApi = useCallback(
-    async (path: string, body: unknown): Promise<{ ok: boolean; data: Record<string, unknown> }> => {
-      try {
-        const res = await fetch(path, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(body),
-        });
-        const data = (await res.json().catch(() => ({}))) as Record<string, unknown>;
-        return { ok: res.ok, data };
-      } catch {
-        return { ok: false, data: {} };
-      }
-    },
-    [],
-  );
-
-  const domTitle = useCallback(
-    () => ((document.getElementById("wheelTitle")?.textContent ?? "") || title).trim(),
-    [title],
-  );
-
-  const saveToCloud = useCallback(async () => {
-    if (cloudBusy) return;
-    setCloudBusy(true);
-    setCloudMsg(t.cloudWorking);
-    const { ok, data } = await callApi("/api/wheels", {
-      title: domTitle(),
-      data: {
-        entries: parseEntries(entriesTextRef.current).map((e) =>
-          e.weight > 1 ? `${e.label} ×${e.weight}` : e.label,
-        ),
-        settings: {
-          theme: settingsRef.current.theme,
-          duration: settingsRef.current.duration,
-        },
-      },
-    });
-    setCloudMsg(ok ? t.cloudSaved : String(data.message ?? t.cloudOffline));
-    setCloudBusy(false);
-    track("wheel_cloud_save", { ok });
-  }, [callApi, cloudBusy, domTitle, t]);
-
-  const getIdeas = useCallback(async () => {
-    if (ideasBusy) return;
-    setIdeasBusy(true);
-    setIdeasMsg(t.ideasWorking);
-    const first = parseEntries(entriesTextRef.current)[0]?.label ?? "";
-    const { ok, data } = await callApi("/api/ai/ideas", { topic: domTitle() || first });
-    if (ok && Array.isArray(data.ideas) && data.ideas.length > 0) {
-      const fresh = entriesTextRef.current.trimEnd();
-      setEntriesText(`${fresh}\n${(data.ideas as string[]).join("\n")}`);
-      setPreset("");
-      setErrorLine("");
-      setIdeasMsg(t.ideasAdded);
-    } else {
-      setIdeasMsg(String(data.message ?? t.ideasOffline));
-    }
-    setIdeasBusy(false);
-    track("wheel_ai_ideas", { ok });
-  }, [callApi, domTitle, ideasBusy, t]);
-
-  const collectWinner = useCallback(async () => {
-    if (collectBusy) return;
-    if (!winner) {
-      setCollectMsg(t.collectSpinFirst);
-      return;
-    }
-    setCollectBusy(true);
-    setCollectMsg(t.collectWorking);
-    const { ok, data } = await callApi("/api/collect", {
-      kind: "wheel_result",
-      data: { title: domTitle(), winner, entries: parseEntries(entriesTextRef.current).length },
-    });
-    setCollectMsg(ok ? t.collectSaved : String(data.message ?? t.collectOffline));
-    setCollectBusy(false);
-    track("wheel_collect", { ok });
-  }, [callApi, collectBusy, domTitle, t, winner]);
+  // ---- Free first (owner decision 2026-11-27) ----
+  // The account-gated use points (cloud sync, AI entry ideas, result
+  // collection) are out of the tool while the site is free: free use keeps
+  // everything on this device and the wheel needs no account. Their backend
+  // routes stay for the payments-on change, which restores the buttons.
 
   const exportWheel = useCallback(() => {
     const payload = {
@@ -811,40 +729,7 @@ export default function WheelSpinner({ t, presetId }: { t: UiStrings; presetId?:
           <button className="quiet-link" id="auditLink" data-audit type="button" onClick={runAudit}>
             {t.auditLink}
           </button>
-          <button
-            className="quiet-link"
-            id="cloudSaveLink"
-            type="button"
-            title={t.cloudPlusNote}
-            disabled={cloudBusy}
-            onClick={() => void saveToCloud()}
-          >
-            {cloudBusy ? t.cloudWorking : t.cloudSave}
-          </button>
-          <button
-            className="quiet-link"
-            id="collectLink"
-            type="button"
-            title={t.collectPlusNote}
-            disabled={collectBusy}
-            onClick={() => void collectWinner()}
-          >
-            {collectBusy ? t.collectWorking : t.collectLink}
-          </button>
         </div>
-        <p className="usepoint-note" id="plusNote">
-          {t.cloudPlusNote}
-        </p>
-        {cloudMsg ? (
-          <p className="usepoint-msg" id="cloudStatus" role="status" aria-live="polite">
-            {cloudMsg}
-          </p>
-        ) : null}
-        {collectMsg ? (
-          <p className="usepoint-msg" id="collectStatus" role="status" aria-live="polite">
-            {collectMsg}
-          </p>
-        ) : null}
         {sessionText ? (
           <p className="countline" id="countLine" aria-live="polite">
             {sessionText}
@@ -942,23 +827,6 @@ export default function WheelSpinner({ t, presetId }: { t: UiStrings; presetId?:
           </div>
         </div>
         </div>
-        <p className="examplerow" id="ideasRow">
-          <button
-            className="quiet-link"
-            id="ideasLink"
-            type="button"
-            disabled={ideasBusy}
-            onClick={() => void getIdeas()}
-          >
-            {ideasBusy ? t.ideasWorking : t.ideasLink}
-          </button>
-          <span className="example-credit">{t.ideasNote}</span>
-        </p>
-        {ideasMsg ? (
-          <p className="usepoint-msg" id="ideasStatus" role="status" aria-live="polite">
-            {ideasMsg}
-          </p>
-        ) : null}
         <label className="mode" htmlFor="elimMode">
           <input
             id="elimMode"
