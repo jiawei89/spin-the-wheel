@@ -1,0 +1,164 @@
+{
+  "title": "Spin the Wheel – Free Random Picker & Wheel Spinner",
+  "description": "Spin the wheel to pick a random name, number, or winner. Free, no sign-up, and nothing covers your result. Paste your list and spin.",
+  "h1": "Spin the Wheel",
+  "heroText": "Paste your list, click spin, and a winner is picked in two to five seconds: free, no sign-up. Every entry gets its own segment on the wheel, a ticking sound marks the turn, and the result lands bigger than anything else on screen.",
+  "ctas": [
+    {
+      "label": "Spin the wheel",
+      "href": "/",
+      "primary": true
+    },
+    {
+      "label": "Split names into teams",
+      "href": "/random-team-generator/",
+      "primary": false
+    }
+  ],
+  "sections": [
+    {
+      "id": "how-it-works",
+      "title": "How it works",
+      "body": "Four steps, and none of them needs an account. Type or paste your options, spin, read the winner: the whole loop takes under a minute the first time and seconds every time after.",
+      "steps": [
+        {
+          "title": "Add your entries",
+          "body": "Type one option per line, or paste a whole list at once. Each line becomes a wheel segment the moment you enter it."
+        },
+        {
+          "title": "Spin it",
+          "body": "Click the wheel, or press Enter or Ctrl+Enter. It turns two to five seconds with a tick, then stops on one entry."
+        },
+        {
+          "title": "Read the winner",
+          "body": "The winner fills the screen, readable across a classroom. Spin again right away, or clear the list for the next round."
+        },
+        {
+          "title": "Check it yourself",
+          "body": "Run 10,000 spins and watch each segment land against its even share — drawn with your browser's crypto random."
+        }
+      ]
+    },
+    {
+      "id": "use-cases",
+      "title": "What people use it for",
+      "body": "One wheel covers a surprising number of jobs. Teachers, giveaway hosts and anyone stuck on a small decision all land here for the same reason: it works as a decision maker whose result is public, instant, and impossible to argue was picked by hand.",
+      "items": [
+        {
+          "title": "Classroom picks",
+          "body": "Use it as a random name picker: paste your class roster and spin for who answers next. The wheel keeps every turn visible, so participation feels fair instead of teacher's-choice."
+        },
+        {
+          "title": "Giveaway wheel",
+          "body": "Enter your entrants' names and spin the giveaway wheel on screen during a livestream or event. Everyone watches the same spin land, which is what makes a draw believable."
+        },
+        {
+          "title": "Yes or no wheel",
+          "body": "Two options, one spin. The yes or no wheel preset settles it when a group is deadlocked on a small call."
+        },
+        {
+          "title": "What to eat wheel",
+          "body": "Load the what to eat wheel with tonight's options and let the spin end the debate. Works just as well for movies, weekend plans or who does the next chore."
+        },
+        {
+          "title": "Games and parties",
+          "body": "The dice, coin flip, letters and truth or dare wheel presets give a party a fair referee without anyone hunting for a real die."
+        },
+        {
+          "title": "Splitting a list into teams",
+          "body": "When the job is groups rather than one winner, the random team generator on this site takes the same pasted list and splits it into evenly sized teams, each roster ready to copy."
+        }
+      ]
+    },
+    {
+      "id": "features",
+      "title": "Built for the spin, not the settings",
+      "body": "Everything here serves one job: get a trusted random result in front of a group, fast. This wheel spinner keeps the tool first and the settings second; the features below are the ones that do the work.",
+      "items": [
+        {
+          "title": "Custom wheel",
+          "body": "Any list becomes a custom wheel: names, numbers, places, prizes. Edit a line and the wheel redraws instantly, so last-minute changes never hold up the room."
+        },
+        {
+          "title": "Wheel templates",
+          "body": "One click loads a preset with its entries already filled in: yes or no, numbers 1–10 or a range you set, dice 1–6, coin flip, letters, truth or dare, what to eat. All of them spin with the same engine."
+        },
+        {
+          "title": "Fullscreen mode",
+          "body": "Open the wheel in fullscreen mode so the whole room sees the spin and the winner, not a browser window. Built for the projector in a classroom and the capture in a stream."
+        },
+        {
+          "title": "Fairness you can test",
+          "body": "Winners are drawn with your browser's cryptographic random function, not a shortcut formula. The 10,000-spin check lets you watch the spread across segments before you trust it with a real draw."
+        },
+        {
+          "title": "Fast by design",
+          "body": "The page opens straight to the wheel. There is no ad to close and no pop-up between you and the spin, because a stalled wheel in front of thirty students is a failed tool."
+        }
+      ]
+    },
+    {
+      "id": "plus",
+      "title": "Free, in one line",
+      "body": "Everything on Spin the Wheel is free: the wheel, the preset wheels, the team generator and the 10,000-spin fairness audit run on your device with no account, no ads and no daily count. There is no paid plan; the [pricing page](/pricing/) explains why."
+    },
+    {
+      "id": "faq",
+      "title": "Frequently asked questions",
+      "body": "Quick answers to the questions people ask before their first spin."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is this wheel really free?",
+      "answer": "Yes. You can paste a list, spin, split teams and check the 10,000-spin results without an account, a payment or a daily limit: the wheel itself has no stated cap on entries or spins. There is no paid plan and nothing to sign up for: the whole site works this way."
+    },
+    {
+      "question": "How random is the result?",
+      "answer": "The outcome cannot be predicted or nudged toward a favourite entry, and the same check that proves it is on this page: run 10,000 spins and watch how evenly the results land across your segments. True randomness also means a name can win twice in a row, just like a fair coin can land heads twice."
+    },
+    {
+      "question": "How many entries can I put on the wheel?",
+      "answer": "Paste as long a list as your job needs: the wheel divides the segments evenly and keeps drawing at any length. The practical limit is readability, since with dozens of entries the labels get small. For a big group, split the list into rounds, or use the team generator when you need groups instead of a single winner."
+    },
+    {
+      "question": "Can I use it to pick a giveaway winner?",
+      "answer": "Yes. Enter each entrant on its own line, share your screen or projector, and spin so the audience watches the draw happen live. It is a transparent way to pick a winner for a social giveaway or classroom raffle, though it is not a certified lottery system: for legally regulated draws, use a licensed service."
+    },
+    {
+      "question": "What happens to the names I paste?",
+      "answer": "You paste entries only to spin them; the site keeps no account for free visitors and shows no ads. What the site stores, and for how long, is set out on the [privacy page](/privacy/). And if a result ever looks wrong, write to us through the [contact form](/contact/): include the list you entered and the result you expected."
+    }
+  ],
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "Spin the Wheel",
+        "url": "https://site.example/"
+      },
+      {
+        "@type": "Organization",
+        "name": "Spin the Wheel",
+        "url": "https://site.example/"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Spin the Wheel",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Web",
+        "url": "https://site.example/",
+        "description": "Free wheel spinner: paste a list, spin, and a winner is drawn at random with your browser's cryptographic random function. Includes preset wheels, team splitting and a 10,000-spin fairness check.",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Free",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        ]
+      }
+    ]
+  }
+}

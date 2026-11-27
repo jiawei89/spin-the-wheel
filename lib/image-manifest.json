@@ -1,0 +1,162 @@
+{
+  "/images/carnival-wheel.png": {
+    "width": 836,
+    "height": 1300,
+    "variants": [
+      {
+        "src": "/images/derived/carnival-wheel.w480.avif",
+        "width": 480,
+        "format": "avif"
+      },
+      {
+        "src": "/images/derived/carnival-wheel.w480.webp",
+        "width": 480,
+        "format": "webp"
+      }
+    ]
+  },
+  "/images/classroom-raised-hands.png": {
+    "width": 1880,
+    "height": 1253,
+    "variants": [
+      {
+        "src": "/images/derived/classroom-raised-hands.w480.avif",
+        "width": 480,
+        "format": "avif"
+      },
+      {
+        "src": "/images/derived/classroom-raised-hands.w960.avif",
+        "width": 960,
+        "format": "avif"
+      },
+      {
+        "src": "/images/derived/classroom-raised-hands.w1440.avif",
+        "width": 1440,
+        "format": "avif"
+      },
+      {
+        "src": "/images/derived/classroom-raised-hands.w480.webp",
+        "width": 480,
+        "format": "webp"
+      },
+      {
+        "src": "/images/derived/classroom-raised-hands.w960.webp",
+        "width": 960,
+        "format": "webp"
+      },
+      {
+        "src": "/images/derived/classroom-raised-hands.w1440.webp",
+        "width": 1440,
+        "format": "webp"
+      }
+    ]
+  },
+  "/images/game-night.png": {
+    "width": 1880,
+    "height": 1218,
+    "variants": [
+      {
+        "src": "/images/derived/game-night.w480.avif",
+        "width": 480,
+        "format": "avif"
+      },
+      {
+        "src": "/images/derived/game-night.w960.avif",
+        "width": 960,
+        "format": "avif"
+      },
+      {
+        "src": "/images/derived/game-night.w1440.avif",
+        "width": 1440,
+        "format": "avif"
+      },
+      {
+        "src": "/images/derived/game-night.w480.webp",
+        "width": 480,
+        "format": "webp"
+      },
+      {
+        "src": "/images/derived/game-night.w960.webp",
+        "width": 960,
+        "format": "webp"
+      },
+      {
+        "src": "/images/derived/game-night.w1440.webp",
+        "width": 1440,
+        "format": "webp"
+      }
+    ]
+  },
+  "/images/raffle-drum.png": {
+    "width": 1880,
+    "height": 1253,
+    "variants": [
+      {
+        "src": "/images/derived/raffle-drum.w480.avif",
+        "width": 480,
+        "format": "avif"
+      },
+      {
+        "src": "/images/derived/raffle-drum.w960.avif",
+        "width": 960,
+        "format": "avif"
+      },
+      {
+        "src": "/images/derived/raffle-drum.w1440.avif",
+        "width": 1440,
+        "format": "avif"
+      },
+      {
+        "src": "/images/derived/raffle-drum.w480.webp",
+        "width": 480,
+        "format": "webp"
+      },
+      {
+        "src": "/images/derived/raffle-drum.w960.webp",
+        "width": 960,
+        "format": "webp"
+      },
+      {
+        "src": "/images/derived/raffle-drum.w1440.webp",
+        "width": 1440,
+        "format": "webp"
+      }
+    ]
+  },
+  "/images/team-lineup.png": {
+    "width": 1880,
+    "height": 1253,
+    "variants": [
+      {
+        "src": "/images/derived/team-lineup.w480.avif",
+        "width": 480,
+        "format": "avif"
+      },
+      {
+        "src": "/images/derived/team-lineup.w960.avif",
+        "width": 960,
+        "format": "avif"
+      },
+      {
+        "src": "/images/derived/team-lineup.w1440.avif",
+        "width": 1440,
+        "format": "avif"
+      },
+      {
+        "src": "/images/derived/team-lineup.w480.webp",
+        "width": 480,
+        "format": "webp"
+      },
+      {
+        "src": "/images/derived/team-lineup.w960.webp",
+        "width": 960,
+        "format": "webp"
+      },
+      {
+        "src": "/images/derived/team-lineup.w1440.webp",
+        "width": 1440,
+        "format": "webp"
+      }
+    ]
+  }
+}

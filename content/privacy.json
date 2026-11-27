@@ -1,0 +1,29 @@
+{
+  "title": "Privacy Policy – Spin the Wheel",
+  "description": "What Spin the Wheel collects, what a generation sends to its server, and how to ask for deletion, in plain language.",
+  "h1": "Privacy policy",
+  "heroText": "Short version: every tool on this site runs on your device. This page explains what the site counts, what a contact message keeps, and how to have data removed.",
+  "ctas": [],
+  "sections": [
+    {
+      "id": "what-runs-where",
+      "title": "Where your work happens",
+      "body": "Splitting teams, the wheel and the preset tools run in your browser on your device; those runs are not sent anywhere and are not stored. No tool on this site uploads your list or your entries."
+    },
+    {
+      "id": "what-is-collected",
+      "title": "What is collected",
+      "body": "No account is needed for anything on the site, and no email is asked for. The site counts anonymous, aggregate usage events — that a spin started and finished, never the entries themselves — to steer what gets fixed next. Messages sent through the [contact form](/contact/) are kept so the owner can read and answer them."
+    },
+    {
+      "id": "your-choices",
+      "title": "Your choices",
+      "body": "You can ask for a message you sent to be deleted through the contact form. The site does not sell data and does not run advertising networks on the tool pages. The [terms of use](/terms/) govern your use of the site."
+    }
+  ],
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Privacy Policy – Spin the Wheel"
+  }
+}

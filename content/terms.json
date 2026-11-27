@@ -1,0 +1,29 @@
+{
+  "title": "Terms of Use – Spin the Wheel",
+  "description": "The plain terms for using Spin the Wheel: what the service is, what you may do with it, and what it is not.",
+  "h1": "Terms of use",
+  "heroText": "Use the tools freely for real draws of your own. These terms say what the service is, what you may not do with it, and how the free service works.",
+  "ctas": [],
+  "sections": [
+    {
+      "id": "the-service",
+      "title": "What the service is",
+      "body": "Spin the Wheel is an independent site run by its owner. It offers a random picker wheel, preset wheels and a random team generator, all free and running in your browser on your device. It is not affiliated with, endorsed by or connected to any other wheel, picker or random-draw site or brand."
+    },
+    {
+      "id": "fair-use",
+      "title": "How you may use it",
+      "body": "You may use the tools for classrooms, games, giveaways and decisions of your own, and share results you produce. You may not disrupt or automate the site in ways that degrade it for others, or resell the service as your own. Draws are random; a result is final once shown, and the site does not mediate disputes about outcomes."
+    },
+    {
+      "id": "subscriptions",
+      "title": "Subscriptions and changes",
+      "body": "The wheel, the presets and the team splitter are free and run on your device, with no account. Optional Plus subscriptions add the cloud features (wheel sync, participant-result collection and AI entry ideas) and are billed monthly ($5 a month, $2.99 for a new customer's first month while the offer runs) or yearly ($48). Manage billing on the pricing page opens the payment provider's portal, where you can cancel at any time: cancelling stops the next charge, the plan runs to the end of the month already paid for, and the account then returns to the free device tools. A wrong charge or an allowance that never worked is put right through the [contact form](/contact/) — by refund, credit or fix, case by case. The [privacy policy](/privacy/) explains what happens to data you send."
+    }
+  ],
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Terms of Use – Spin the Wheel"
+  }
+}

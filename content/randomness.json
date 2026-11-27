@@ -1,0 +1,42 @@
+{
+  "title": "Is the wheel fair? – Spin the Wheel",
+  "description": "How Spin the Wheel picks a winner, a 10,000-spin audit you run yourself in your browser, and the recorded 100,000-spin results for the starter wheel.",
+  "h1": "Is the wheel actually random?",
+  "heroText": "Every spin is one fresh random event, drawn from the browser's crypto-grade random source, not from a counter, a pattern or a remembered last winner. Run the audit yourself below — every spin is computed in your browser.",
+  "ctas": [],
+  "sections": [
+    {
+      "id": "mechanism",
+      "title": "How a pick is made",
+      "body": "Each spin draws one whole-circle number from [crypto.getRandomValues](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues), the random source browsers reserve for cryptography, and reads the matching slice of the wheel. The draw is rejection-sampled: values that would bias the circle are thrown away and redrawn, so every slice, every entry, carries exactly its share of the circle.\n\nNothing is kept between spins. The wheel has no memory of what it landed on last, no counter to work through, and no sequence to predict. A run of the same winner is ordinary chance, not a fault. Over a session the entries even out, which is what the audits on this page show."
+    },
+    {
+      "id": "your-audit",
+      "title": "Run your own 10,000-spin audit",
+      "body": "This audit runs on your machine, in this page. The starter wheel is preloaded, but the box is yours to edit: paste any list, run 10,000 spins through the same pick code a visitor's spin uses, and compare each entry's share with its fair slice of the circle."
+    },
+    {
+      "id": "published",
+      "title": "The published audit",
+      "body": "The figure below is a recorded run of 100,000 spins on the same starter wheel, drawn through the same code path your spin takes. Every entry landed within 0.27 points of its fair share, well inside the 2-point band a fair wheel should hold. The counts are stored with the site's source, so the numbers can be checked rather than trusted."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Can the wheel land on the same entry twice in a row?",
+      "answer": "Yes, and that is what fair looks like. Every spin is a fresh random event with no memory of the last one. Over a session repeats even out: a wheel that refused to repeat would be steering the result, not randomising it."
+    },
+    {
+      "question": "Does the wheel favour some entries?",
+      "answer": "No. On equal entries every slice of the circle is the same size and each draw is uniform across the whole circle. Both audits on this page show every entry landing within a fraction of its fair share."
+    },
+    {
+      "question": "What does the ×N weight change?",
+      "answer": "A weight makes an entry's slice proportionally larger: an entry marked ×2 is twice as likely as a ×1 entry, exactly in proportion to the weights you set. The draw itself is unchanged; only the slice sizes move."
+    },
+    {
+      "question": "Where do the audit numbers come from?",
+      "answer": "From this site's own engine, run in the browser. The 10,000-spin audit is yours to re-run on this page, and the 100,000-spin figure was recorded from the same starter wheel through the same code path a visitor's spin takes."
+    }
+  ]
+}

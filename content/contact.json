@@ -1,0 +1,47 @@
+{
+  "title": "Contact Spin the Wheel",
+  "description": "Write to the owner of Spin the Wheel through the message form: wrong results, missing features, pricing or privacy requests.",
+  "h1": "Contact Spin the Wheel",
+  "heroText": "This site is run by its owner, and the form below goes straight to them. Write about a result that looks wrong, a feature you miss, a question about why the site is free or a privacy request, and you will get a personal answer.",
+  "ctas": [],
+  "sections": [
+    {
+      "id": "what-to-write",
+      "title": "What to write about",
+      "body": "Each kind of message is easiest to answer with the right details.",
+      "items": [
+        {
+          "title": "A result that looks wrong",
+          "body": "Include what you entered and the result you expected. For a team split, paste the list and the team count; for a wheel spin, name the entries."
+        },
+        {
+          "title": "A missing feature",
+          "body": "Say what you were trying to do and what you expected the tool to do. Feature requests steer what gets built next."
+        },
+        {
+          "title": "A pricing question",
+          "body": "The whole site is free: no plans, no card, no ads. The [pricing page](/pricing/) explains what that covers and why."
+        },
+        {
+          "title": "Privacy or deletion",
+          "body": "Say what you want removed and where it appeared. See the [privacy policy](/privacy/) for what the site keeps."
+        }
+      ]
+    },
+    {
+      "id": "expectations",
+      "title": "What to expect",
+      "body": "Messages are read by the owner, usually answered within a few days. There is no phone line and no support team; the form is the way in, and it reaches a person."
+    },
+    {
+      "id": "not-handled",
+      "title": "What this site cannot help with",
+      "body": "Spin the Wheel makes random draws; it cannot recover a purchase made on another site, mediate the outcome of your draw, or settle a dispute about who won your giveaway. Legal questions about your own event are yours to take to whoever runs it."
+    }
+  ],
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Contact Spin the Wheel"
+  }
+}

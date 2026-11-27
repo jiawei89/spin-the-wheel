@@ -1,0 +1,175 @@
+{
+  "version": 1,
+  "updatedAt": "2026-11-27T04:14:35.513Z",
+  "assets": {
+    "/images/carnival-wheel.png": {
+      "path": "/images/carnival-wheel.png",
+      "width": 836,
+      "height": 1300,
+      "orientation": "portrait",
+      "dominantColors": [
+        "#9c9898",
+        "#8d5b54",
+        "#a37877",
+        "#a39fa2",
+        "#828b95"
+      ],
+      "contentDescription": "A fairground midway game booth with basketball hoops, hanging plush prizes, string lights, and a ferris wheel ride against a partly cloudy sky.",
+      "subjectTags": [
+        "carnival",
+        "fairground",
+        "prizes",
+        "ferris wheel",
+        "games"
+      ],
+      "composition": "full-scene",
+      "textDensity": "some",
+      "qualityScore": 80,
+      "suitableRoles": [
+        "hero-subject",
+        "section-media",
+        "gallery-media"
+      ],
+      "usage": "page",
+      "annotator": "vlm",
+      "annotatedAt": "2026-11-27T04:14:35.513Z",
+      "sourceEtag": "0df204f465161aa8cb957364c8d71ce8"
+    },
+    "/images/classroom-raised-hands.png": {
+      "path": "/images/classroom-raised-hands.png",
+      "width": 1880,
+      "height": 1253,
+      "orientation": "landscape",
+      "dominantColors": [
+        "#e4dccc",
+        "#ede3d7",
+        "#d5ccbc",
+        "#7d5a43",
+        "#d8d5c5"
+      ],
+      "contentDescription": "Students seated at desks raise their hands in a classroom; a teacher stands near green chalkboards in the blurred background.",
+      "subjectTags": [
+        "classroom",
+        "students",
+        "raised hands",
+        "teacher",
+        "education"
+      ],
+      "composition": "full-scene",
+      "textDensity": "none",
+      "qualityScore": 85,
+      "suitableRoles": [
+        "hero-subject",
+        "section-media",
+        "gallery-media"
+      ],
+      "usage": "page",
+      "annotator": "vlm",
+      "annotatedAt": "2026-11-27T04:14:35.513Z",
+      "sourceEtag": "cc130d194c67b9d12d1b847ca3ff30eb"
+    },
+    "/images/game-night.png": {
+      "path": "/images/game-night.png",
+      "width": 1880,
+      "height": 1218,
+      "orientation": "landscape",
+      "dominantColors": [
+        "#a57b67",
+        "#8c5738",
+        "#a2887a",
+        "#aa7b53",
+        "#805c46"
+      ],
+      "contentDescription": "Two women at a wooden table playing Monopoly, with a pepperoni pizza, wine glasses, play money, and cards; one woman cuts pizza with a cutter.",
+      "subjectTags": [
+        "board game",
+        "friends",
+        "pizza",
+        "wine",
+        "table",
+        "evening"
+      ],
+      "composition": "full-scene",
+      "textDensity": "some",
+      "qualityScore": 88,
+      "suitableRoles": [
+        "hero-subject",
+        "section-media",
+        "gallery-media"
+      ],
+      "usage": "page",
+      "annotator": "vlm",
+      "annotatedAt": "2026-11-27T04:14:35.513Z",
+      "sourceEtag": "ad20a4785ff26a4245faa46d39b0745e"
+    },
+    "/images/raffle-drum.png": {
+      "path": "/images/raffle-drum.png",
+      "width": 1880,
+      "height": 1253,
+      "orientation": "landscape",
+      "dominantColors": [
+        "#56584b",
+        "#666d67",
+        "#5b625a",
+        "#646255",
+        "#252923"
+      ],
+      "contentDescription": "A tattooed hand holds two strips of numbered raffle tickets over ground scattered with fallen colorful ticket stubs.",
+      "subjectTags": [
+        "raffle",
+        "tickets",
+        "numbers",
+        "hand",
+        "drawing"
+      ],
+      "composition": "full-scene",
+      "textDensity": "some",
+      "qualityScore": 82,
+      "suitableRoles": [
+        "section-media",
+        "gallery-media",
+        "hero-subject"
+      ],
+      "usage": "page",
+      "annotator": "vlm",
+      "annotatedAt": "2026-11-27T04:14:35.513Z",
+      "sourceEtag": "dbea157b1c5bbb4caefcf15e36787da4"
+    },
+    "/images/team-lineup.png": {
+      "path": "/images/team-lineup.png",
+      "width": 1880,
+      "height": 1253,
+      "orientation": "landscape",
+      "dominantColors": [
+        "#e8e7e6",
+        "#cad9e8",
+        "#d8dde3",
+        "#c9dcf1",
+        "#dce4ec"
+      ],
+      "contentDescription": "Youth American football players in white and red uniforms and helmets line up along a turf field under a bright sky at sunset.",
+      "subjectTags": [
+        "youth sports",
+        "football",
+        "team",
+        "field",
+        "lineup"
+      ],
+      "composition": "full-scene",
+      "textDensity": "none",
+      "qualityScore": 88,
+      "suitableRoles": [
+        "hero-subject",
+        "section-media",
+        "gallery-media"
+      ],
+      "usage": "page",
+      "annotator": "vlm",
+      "annotatedAt": "2026-11-27T04:14:35.513Z",
+      "sourceEtag": "16ac9712560f856923ac6a26c38f1af1"
+    }
+  },
+  "vision": {
+    "lastVlmSuccessAt": "2026-11-27T04:14:35.513Z"
+  }
+}

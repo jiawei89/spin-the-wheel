@@ -1,0 +1,139 @@
+{
+  "title": "Pricing – Spin the Wheel pricing",
+  "description": "Spin the Wheel is free to use on your device. Plus adds 50 cloud generations a month for $5, and your first month is $2.99.",
+  "h1": "Spin the Wheel pricing",
+  "heroText": "Everything on this site starts free: paste your entries and [spin the wheel](/), no account needed. Plus is for people who also want cloud generations, 50 every month, while the free wheel and the [random team generator](/random-team-generator/) keep working on your device with no count. Pick the monthly plan or save with the yearly one below.",
+  "ctas": [
+    {
+      "label": "Start with Plus",
+      "href": "/pricing/",
+      "primary": true,
+      "action": "checkout",
+      "product": "plus"
+    }
+  ],
+  "sections": [
+    {
+      "id": "plans",
+      "title": "Plans",
+      "body": "Two ways to use Spin the Wheel: the free tool on your device, or Plus with a monthly allowance of cloud generations.",
+      "items": [
+        {
+          "title": "Free",
+          "body": "The wheel, the presets and the random team generator run on your device, with no sign-in and no usage count. Generations are not part of the free plan."
+        },
+        {
+          "title": "Plus",
+          "body": "50 cloud generations a month for people who also want wheels, results and entry ideas to follow them across devices."
+        },
+        {
+          "title": "Plus yearly",
+          "body": "The same 50 cloud generations a month as the monthly plan, for people who know they will keep it."
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "title": "What separates the plans",
+      "body": "Only these rows differ.",
+      "table": {
+        "caption": "Free vs Plus",
+        "columns": ["What you get", "Free", "Plus"],
+        "rows": [
+          { "cells": ["Price", "$0", "$5 a month"] },
+          { "cells": ["Cloud generations a month", "None — they are not part of the free plan", "50"] },
+          { "cells": ["Wheels synced across devices", "Not included", "Up to 20 stored wheels"] },
+          { "cells": ["Participant results collected", "Not included", "Up to 100 a month"] },
+          { "cells": ["Sign-in", "Not needed", "Needed for the cloud features"] },
+          { "cells": ["Device use of the wheel", "Full, no count", "Full, no count"] }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "title": "Billing questions",
+      "body": "The short answers on paying, cancelling and what a generation is."
+    }
+  ],
+  "faq": [
+    {
+      "question": "When does the $2.99 first month end and the $5 charge start?",
+      "answer": "Your first month costs $2.99 if you are a new customer. When that month is over, the plan renews at $5 a month unless you cancel before the renewal date. The offer ends Dec 18, 2026, so a subscription started after that date is charged $5 from the first month."
+    },
+    {
+      "question": "Can I cancel?",
+      "answer": "Yes, at any time. Open Manage billing on this page to cancel in the payment provider's portal — cancelling stops the next charge, and your plan keeps running until the end of the month you already paid for. After that the site returns you to the free device tool, which needs no account."
+    },
+    {
+      "question": "What counts as one generation?",
+      "answer": "One generation is one AI entry-ideas request — the ask for a list of entry ideas. Plus includes 50 a month. Syncing up to 20 wheels and collecting up to 100 participant results a month are included with Plus and do not use generations. The wheel itself, the presets, the team splitter and the fairness audit run on your device and never count."
+    },
+    {
+      "question": "I was charged wrongly or a generation failed. What do I do?",
+      "answer": "Write through the form on the [contact page](/contact/) with the email your checkout used, the date of the charge and what happened. The owner reads every message and answers billing problems there."
+    },
+    {
+      "question": "Do you offer refunds?",
+      "answer": "There is no automatic refund policy. If a charge is wrong, or the paid allowance never worked for you, describe it in the contact form and the owner will put it right — by refund, credit or fix, case by case. The cancellation and refund terms are on the [terms page](/terms/)."
+    }
+  ],
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Product",
+        "name": "Spin the Wheel Plus",
+        "description": "50 cloud generations a month for the Spin the Wheel tool set.",
+        "offers": [
+          { "@type": "Offer", "name": "Plus monthly", "price": "5.00", "priceCurrency": "USD", "category": "subscription" },
+          { "@type": "Offer", "name": "Plus yearly", "price": "48.00", "priceCurrency": "USD", "category": "subscription" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "When does the $2.99 first month end and the $5 charge start?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Your first month costs $2.99 if you are a new customer. When that month is over, the plan renews at $5 a month unless you cancel before the renewal date. The offer ends Dec 18, 2026, so a subscription started after that date is charged $5 from the first month."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I cancel?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, at any time. Open Manage billing on this page to cancel in the payment provider's portal — cancelling stops the next charge, and your plan keeps running until the end of the month you already paid for. After that the site returns you to the free device tool, which needs no account."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What counts as one generation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "One generation is one AI entry-ideas request — the ask for a list of entry ideas. Plus includes 50 a month. Syncing up to 20 wheels and collecting up to 100 participant results a month are included with Plus and do not use generations. The wheel itself, the presets, the team splitter and the fairness audit run on your device and never count."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "I was charged wrongly or a generation failed. What do I do?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Write through the form on the contact page with the email your checkout used, the date of the charge and what happened. The owner reads every message and answers billing problems there."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you offer refunds?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "There is no automatic refund policy. If a charge is wrong, or the paid allowance never worked for you, describe it in the contact form and the owner will put it right — by refund, credit or fix, case by case. The cancellation and refund terms are on the terms page."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

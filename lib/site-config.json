@@ -1,0 +1,2045 @@
+{
+  "title": "Spin the Wheel – Free Random Picker & Wheel Spinner",
+  "description": "Spin the wheel to pick a random name, number, or winner. Free, no sign-up, and nothing covers your result.",
+  "brandName": "Spin the Wheel",
+  "domain": "spin-the-wheel.shipsite-preview.dev",
+  "language": "en",
+  "locales": [],
+  "routes": [
+    {
+      "path": "/",
+      "contentKey": "home",
+      "title": "Spin the Wheel – Free Random Picker & Wheel Spinner",
+      "description": "Spin the wheel to pick a random name, number, or winner. Free, no sign-up, and nothing covers your result. Paste your list and spin.",
+      "index": true,
+      "canonical": "/",
+      "navLabel": "Spin the Wheel",
+      "role": "tool",
+      "routeArchetype": "home_tool",
+      "indexPolicy": "index",
+      "routeCompositionRequired": true,
+      "compositionIdOrTemplateFamily": "route:/",
+      "coverageMode": "direct_screen",
+      "representativeScreenId": null,
+      "designIrHash": "6c6aff18ead5e7ac1279a35c1ce57df85995cbecf7192124536bfdc566933f29",
+      "requiredStates": [
+        "empty",
+        "selected_or_uploaded",
+        "processing",
+        "success",
+        "validation_error",
+        "runtime_error",
+        "reset"
+      ],
+      "requiredActions": [
+        "select_or_upload",
+        "preview_source",
+        "start_or_confirm_processing",
+        "preview_result",
+        "download",
+        "replace_or_reset"
+      ],
+      "copyContractRef": "copy:58e2c022b092b87b75a8a3ea60857c8f6d485b6c857147a720abd49b457fdfe1",
+      "verdict": "not_applicable",
+      "publicExposure": true,
+      "lastModified": "2026-11-27"
+    },
+    {
+      "path": "/pricing/",
+      "contentKey": "pricing",
+      "title": "Pricing – Spin the Wheel pricing",
+      "description": "Spin the Wheel is free to use on your device: wheel spins with no stated cap, the team splitter and a published randomness audit, with no account and no ads. Plus adds cloud sync, result collection and AI entry ideas.",
+      "index": true,
+      "canonical": "/pricing/",
+      "navLabel": "Pricing",
+      "role": "pricing",
+      "routeArchetype": "pricing",
+      "indexPolicy": "index",
+      "routeCompositionRequired": true,
+      "compositionIdOrTemplateFamily": "route:/pricing/",
+      "coverageMode": "direct_screen",
+      "representativeScreenId": null,
+      "designIrHash": "710926abcb059a9f5c0eda81319b27caad6eac2d12af52c9c61524f5c8d02c2f",
+      "requiredStates": [
+        "plans_ready",
+        "checkout_unavailable_or_removed"
+      ],
+      "requiredActions": [
+        "inspect_plan_limits",
+        "select_plan_or_contact"
+      ],
+      "copyContractRef": "copy:11539af09da6a77f789ea3e453ee893c8bee89f04ecf479995268ab6d068818d",
+      "verdict": "not_applicable",
+      "publicExposure": true,
+      "lastModified": "2026-11-27"
+    },
+    {
+      "path": "/random-team-generator/",
+      "contentKey": "random-team-generator",
+      "title": "Random Team Generator – Split Names into Teams – Spin the Wheel",
+      "description": "Paste a name list, pick how many teams, and this random team generator splits them fairly. Free, no sign-up, teams ready to copy.",
+      "index": true,
+      "canonical": "/random-team-generator/",
+      "navLabel": "Team Generator",
+      "role": "tool",
+      "routeArchetype": "article_guide",
+      "indexPolicy": "index",
+      "routeCompositionRequired": true,
+      "compositionIdOrTemplateFamily": "route:/random-team-generator/",
+      "coverageMode": "inherited_template",
+      "representativeScreenId": null,
+      "designIrHash": "256eb78d445b56ccd99cb8c5a6260576d3883195f0979103dd08678a60aa99a9",
+      "requiredStates": [
+        "ready"
+      ],
+      "requiredActions": [
+        "navigate_context",
+        "follow_contextual_cta"
+      ],
+      "copyContractRef": "copy:2ecfa5e6af5b7500ad362af84afff5cac30b12eec7a4aad4cf9f4986a3f9b82e",
+      "verdict": "not_applicable",
+      "publicExposure": true,
+      "lastModified": "2026-11-27"
+    },
+    {
+      "path": "/contact/",
+      "contentKey": "contact",
+      "title": "Contact Spin the Wheel",
+      "description": "Write to the owner of Spin the Wheel through the message form: wrong results, missing features, billing or privacy requests.",
+      "index": true,
+      "canonical": "/contact/",
+      "navLabel": "Contact",
+      "role": "contact",
+      "routeArchetype": "article_guide",
+      "indexPolicy": "index",
+      "routeCompositionRequired": true,
+      "compositionIdOrTemplateFamily": "route:/contact/",
+      "coverageMode": "inherited_template",
+      "representativeScreenId": null,
+      "designIrHash": "d22aebd83e1c87520c0ccccec3c2446ef7c69250482cbd2d1dd5f0603b893353",
+      "requiredStates": [
+        "ready"
+      ],
+      "requiredActions": [
+        "navigate_context",
+        "follow_contextual_cta"
+      ],
+      "copyContractRef": "copy:d570657efc5989e14d36d5e2133335a3a0f974f209ff6676a273d12dc42a30b2",
+      "verdict": "not_applicable",
+      "publicExposure": true,
+      "lastModified": "2026-11-27"
+    },
+    {
+      "path": "/privacy/",
+      "contentKey": "privacy",
+      "title": "Privacy Policy – Spin the Wheel",
+      "description": "What Spin the Wheel collects, what a generation sends to its server, and how to ask for deletion, in plain language.",
+      "index": true,
+      "canonical": "/privacy/",
+      "navLabel": "Privacy",
+      "role": "legal",
+      "routeArchetype": "legal",
+      "indexPolicy": "index",
+      "routeCompositionRequired": true,
+      "compositionIdOrTemplateFamily": "route:/privacy/",
+      "coverageMode": "inherited_template",
+      "representativeScreenId": null,
+      "designIrHash": "fe7650b3be28c58362a51a0d48575e58fb2e18d6ce949b5a08c418ab151fff0a",
+      "requiredStates": [
+        "ready"
+      ],
+      "requiredActions": [
+        "navigate_document",
+        "return_to_product"
+      ],
+      "copyContractRef": "copy:574bc07aa2ed5b38082c1648ed892d99c1ce3693923a9b3e7e7360d642ee85fc",
+      "verdict": "not_applicable",
+      "publicExposure": true,
+      "lastModified": "2026-11-27"
+    },
+    {
+      "path": "/terms/",
+      "contentKey": "terms",
+      "title": "Terms of Use – Spin the Wheel",
+      "description": "The plain terms for using Spin the Wheel: what the service is, what you may do with it, and what it is not.",
+      "index": true,
+      "canonical": "/terms/",
+      "navLabel": "Terms",
+      "role": "legal",
+      "routeArchetype": "legal",
+      "indexPolicy": "index",
+      "routeCompositionRequired": true,
+      "compositionIdOrTemplateFamily": "route:/terms/",
+      "coverageMode": "inherited_template",
+      "representativeScreenId": null,
+      "designIrHash": "dc1e5ac2870f628ab2d40f37f043e058b9ddc4567d4ecf8b7db9e99318e880cd",
+      "requiredStates": [
+        "ready"
+      ],
+      "requiredActions": [
+        "navigate_document",
+        "return_to_product"
+      ],
+      "copyContractRef": "copy:1109e80a70a6ca91c451e7117b389a7e8aa54e1b79da1ab5b5c1238aa137c74b",
+      "verdict": "not_applicable",
+      "publicExposure": true,
+      "lastModified": "2026-11-27"
+    },
+    {
+      "path": "/wheels/",
+      "contentKey": "wheels",
+      "title": "Preset wheels – Spin the Wheel",
+      "description": "Twelve ready-made wheels: yes or no, coin flip, dice, numbers, letters and more. Load one and spin.",
+      "index": true,
+      "canonical": "/wheels/",
+      "navLabel": "Preset wheels",
+      "role": "tool",
+      "routeArchetype": "article_guide",
+      "indexPolicy": "index",
+      "routeCompositionRequired": true,
+      "compositionIdOrTemplateFamily": "route:/wheels/",
+      "coverageMode": "inherited_template",
+      "representativeScreenId": null,
+      "designIrHash": "fe6d7adb998fc4624020866511a372043905d676748cf76093c1bed0cc824095",
+      "requiredStates": [
+        "ready"
+      ],
+      "requiredActions": [
+        "navigate_document",
+        "return_to_product"
+      ],
+      "copyContractRef": "copy:4adf87e40c152e414c6903c2746a6ba1b179c888aebe3e5533c17e2e645bd082",
+      "verdict": "not_applicable",
+      "publicExposure": true,
+      "lastModified": "2026-11-27"
+    },
+    {
+      "path": "/randomness/",
+      "contentKey": "randomness",
+      "title": "Is the wheel fair? – Spin the Wheel",
+      "description": "How Spin the Wheel picks a winner, a 10,000-spin audit you run yourself, and the recorded 100,000-spin result.",
+      "index": true,
+      "canonical": "/randomness/",
+      "navLabel": "Fairness",
+      "role": "content",
+      "routeArchetype": "article_guide",
+      "indexPolicy": "index",
+      "routeCompositionRequired": true,
+      "compositionIdOrTemplateFamily": "route:/randomness/",
+      "coverageMode": "inherited_template",
+      "representativeScreenId": null,
+      "designIrHash": "25947a56695ea065cf61c16abbdd7576835ae2bfb15738d59fdec27786973fc0",
+      "requiredStates": [
+        "ready"
+      ],
+      "requiredActions": [
+        "navigate_document",
+        "return_to_product"
+      ],
+      "copyContractRef": "copy:54fe3186d469e179b6d1589dc6888bdd00dd7050390461873f5e5309f32bb8be",
+      "verdict": "not_applicable",
+      "publicExposure": true,
+      "lastModified": "2026-11-27"
+    },
+    {
+      "path": "/wheels/yes-no/",
+      "contentKey": null,
+      "title": "Yes / No wheel – Spin the Wheel",
+      "description": "Settle a small call out loud: load it and let the wheel answer.",
+      "index": true,
+      "canonical": "/wheels/yes-no/",
+      "navLabel": null,
+      "role": "tool",
+      "routeArchetype": "article_guide",
+      "indexPolicy": "index",
+      "routeCompositionRequired": true,
+      "compositionIdOrTemplateFamily": "route:/wheels/yes-no/",
+      "coverageMode": "inherited_template",
+      "representativeScreenId": null,
+      "designIrHash": "60b40998a869cbc42cdfc0aabab35f55336690fdd97b23c1661ae03bc08ba61d",
+      "requiredStates": [
+        "ready"
+      ],
+      "requiredActions": [
+        "navigate_document",
+        "return_to_product"
+      ],
+      "copyContractRef": "copy:b20f26c9a1ce20453f2e8271222ae024627fcab2d0a0e065aca1d2aa957b3d28",
+      "verdict": "not_applicable",
+      "publicExposure": true,
+      "lastModified": "2026-11-27"
+    },
+    {
+      "path": "/wheels/numbers-1-10/",
+      "contentKey": null,
+      "title": "Numbers 1–10 wheel – Spin the Wheel",
+      "description": "A fair ten-way pick for who goes first or which question is next.",
+      "index": true,
+      "canonical": "/wheels/numbers-1-10/",
+      "navLabel": null,
+      "role": "tool",
+      "routeArchetype": "article_guide",
+      "indexPolicy": "index",
+      "routeCompositionRequired": true,
+      "compositionIdOrTemplateFamily": "route:/wheels/numbers-1-10/",
+      "coverageMode": "inherited_template",
+      "representativeScreenId": null,
+      "designIrHash": "85a456899e0533f31763ae8b09716f1954b0524ea7120c6292a65b68c2c6c658",
+      "requiredStates": [
+        "ready"
+      ],
+      "requiredActions": [
+        "navigate_document",
+        "return_to_product"
+      ],
+      "copyContractRef": "copy:54cf46ec9990a9f742db448ab281c72f2aa871cfe19552a9dd69d6a95ef55c30",
+      "verdict": "not_applicable",
+      "publicExposure": true,
+      "lastModified": "2026-11-27"
+    },
+    {
+      "path": "/wheels/custom-range/",
+      "contentKey": null,
+      "title": "Custom range wheel – Spin the Wheel",
+      "description": "Any run of numbers you set, from question numbering to prize draws.",
+      "index": true,
+      "canonical": "/wheels/custom-range/",
+      "navLabel": null,
+      "role": "tool",
+      "routeArchetype": "article_guide",
+      "indexPolicy": "index",
+      "routeCompositionRequired": true,
+      "compositionIdOrTemplateFamily": "route:/wheels/custom-range/",
+      "coverageMode": "inherited_template",
+      "representativeScreenId": null,
+      "designIrHash": "01cd585984b47ede19f483c6f7590d71f86f804d2101d1003cdd5f611d3b318c",
+      "requiredStates": [
+        "ready"
+      ],
+      "requiredActions": [
+        "navigate_document",
+        "return_to_product"
+      ],
+      "copyContractRef": "copy:2567aeafc1c92767923a2441bb9954a15f0a88f2d460f02e1fc4aea032577730",
+      "verdict": "not_applicable",
+      "publicExposure": true,
+      "lastModified": "2026-11-27"
+    },
+    {
+      "path": "/wheels/dice-1-6/",
+      "contentKey": null,
+      "title": "Dice 1–6 wheel – Spin the Wheel",
+      "description": "A die the whole room can see, for board games that lost theirs.",
+      "index": true,
+      "canonical": "/wheels/dice-1-6/",
+      "navLabel": null,
+      "role": "tool",
+      "routeArchetype": "article_guide",
+      "indexPolicy": "index",
+      "routeCompositionRequired": true,
+      "compositionIdOrTemplateFamily": "route:/wheels/dice-1-6/",
+      "coverageMode": "inherited_template",
+      "representativeScreenId": null,
+      "designIrHash": "e7d3b7cd7a7ca296b152d086ddf83d8c420f9676203eb114dbef6a37e852d1c6",
+      "requiredStates": [
+        "ready"
+      ],
+      "requiredActions": [
+        "navigate_document",
+        "return_to_product"
+      ],
+      "copyContractRef": "copy:505adc90ce655a5a0e855bcd43ea71f90927ad381611f1e2e114d7bbe5087135",
+      "verdict": "not_applicable",
+      "publicExposure": true,
+      "lastModified": "2026-11-27"
+    },
+    {
+      "path": "/wheels/coin-flip/",
+      "contentKey": null,
+      "title": "Coin flip wheel – Spin the Wheel",
+      "description": "Heads or tails, visible from the back of the classroom.",
+      "index": true,
+      "canonical": "/wheels/coin-flip/",
+      "navLabel": null,
+      "role": "tool",
+      "routeArchetype": "article_guide",
+      "indexPolicy": "index",
+      "routeCompositionRequired": true,
+      "compositionIdOrTemplateFamily": "route:/wheels/coin-flip/",
+      "coverageMode": "inherited_template",
+      "representativeScreenId": null,
+      "designIrHash": "76e713c7e6bd4232c0dd8a3028c6651bae62f3c79b86f4f2006543dc385c4338",
+      "requiredStates": [
+        "ready"
+      ],
+      "requiredActions": [
+        "navigate_document",
+        "return_to_product"
+      ],
+      "copyContractRef": "copy:d2cef845c851772183fdd0245f9d656d7daf9db7b2c962fa104b925c711e3d5c",
+      "verdict": "not_applicable",
+      "publicExposure": true,
+      "lastModified": "2026-11-27"
+    },
+    {
+      "path": "/wheels/letters/",
+      "contentKey": null,
+      "title": "Letters A–Z wheel – Spin the Wheel",
+      "description": "Twenty-six segments for word games and letter-of-the-day.",
+      "index": true,
+      "canonical": "/wheels/letters/",
+      "navLabel": null,
+      "role": "tool",
+      "routeArchetype": "article_guide",
+      "indexPolicy": "index",
+      "routeCompositionRequired": true,
+      "compositionIdOrTemplateFamily": "route:/wheels/letters/",
+      "coverageMode": "inherited_template",
+      "representativeScreenId": null,
+      "designIrHash": "ccda53eeaaa8987f6444024af7b66ed905f8e8eaa4337305c8eebf631786f053",
+      "requiredStates": [
+        "ready"
+      ],
+      "requiredActions": [
+        "navigate_document",
+        "return_to_product"
+      ],
+      "copyContractRef": "copy:0acbc29295afaa78f75c2a6a807b3ca65be86eb59a999aa7c225017739db9874",
+      "verdict": "not_applicable",
+      "publicExposure": true,
+      "lastModified": "2026-11-27"
+    },
+    {
+      "path": "/wheels/truth-or-dare/",
+      "contentKey": null,
+      "title": "Truth or Dare wheel – Spin the Wheel",
+      "description": "The party classic with a referee nobody can argue with.",
+      "index": true,
+      "canonical": "/wheels/truth-or-dare/",
+      "navLabel": null,
+      "role": "tool",
+      "routeArchetype": "article_guide",
+      "indexPolicy": "index",
+      "routeCompositionRequired": true,
+      "compositionIdOrTemplateFamily": "route:/wheels/truth-or-dare/",
+      "coverageMode": "inherited_template",
+      "representativeScreenId": null,
+      "designIrHash": "70ad16a92cad5ce1ad60d802ada4feb9247a82efcefcf83eeea3c0a5ff72cfbd",
+      "requiredStates": [
+        "ready"
+      ],
+      "requiredActions": [
+        "navigate_document",
+        "return_to_product"
+      ],
+      "copyContractRef": "copy:4ad6a82b7dd3a4d675c5e21169062ee97f45ebb11746a5a9ba1241faf1bb55e9",
+      "verdict": "not_applicable",
+      "publicExposure": true,
+      "lastModified": "2026-11-27"
+    },
+    {
+      "path": "/wheels/what-to-eat/",
+      "contentKey": null,
+      "title": "What to eat wheel – Spin the Wheel",
+      "description": "End the takeout debate with one spin of eight dinners.",
+      "index": true,
+      "canonical": "/wheels/what-to-eat/",
+      "navLabel": null,
+      "role": "tool",
+      "routeArchetype": "article_guide",
+      "indexPolicy": "index",
+      "routeCompositionRequired": true,
+      "compositionIdOrTemplateFamily": "route:/wheels/what-to-eat/",
+      "coverageMode": "inherited_template",
+      "representativeScreenId": null,
+      "designIrHash": "55bd13ef1314f3673801d36972f94b717f380974ee310c552c62b1eff5c67610",
+      "requiredStates": [
+        "ready"
+      ],
+      "requiredActions": [
+        "navigate_document",
+        "return_to_product"
+      ],
+      "copyContractRef": "copy:06d0dd884983d17f680e6afe96de966373c6c3aed5a47812c4a6af4981bc68b6",
+      "verdict": "not_applicable",
+      "publicExposure": true,
+      "lastModified": "2026-11-27"
+    },
+    {
+      "path": "/wheels/numbers-1-20/",
+      "contentKey": null,
+      "title": "Numbers 1–20 wheel – Spin the Wheel",
+      "description": "Twenty fair segments for bigger classes, squads and lucky draws.",
+      "index": true,
+      "canonical": "/wheels/numbers-1-20/",
+      "navLabel": null,
+      "role": "tool",
+      "routeArchetype": "article_guide",
+      "indexPolicy": "index",
+      "routeCompositionRequired": true,
+      "compositionIdOrTemplateFamily": "route:/wheels/numbers-1-20/",
+      "coverageMode": "inherited_template",
+      "representativeScreenId": null,
+      "designIrHash": "c7809968842be59ca2555843094e57d8b98ca9e023f995bc6a0b00ca683e437d",
+      "requiredStates": [
+        "ready"
+      ],
+      "requiredActions": [
+        "navigate_document",
+        "return_to_product"
+      ],
+      "copyContractRef": "copy:06dfb7139cc6aabb3523b24c14dabc8a74ed26968334eeea40b7ae9cd8743d83",
+      "verdict": "not_applicable",
+      "publicExposure": true,
+      "lastModified": "2026-11-27"
+    },
+    {
+      "path": "/wheels/weekdays/",
+      "contentKey": null,
+      "title": "Weekday picker wheel – Spin the Wheel",
+      "description": "Settle which day it happens — a fair pick across the week.",
+      "index": true,
+      "canonical": "/wheels/weekdays/",
+      "navLabel": null,
+      "role": "tool",
+      "routeArchetype": "article_guide",
+      "indexPolicy": "index",
+      "routeCompositionRequired": true,
+      "compositionIdOrTemplateFamily": "route:/wheels/weekdays/",
+      "coverageMode": "inherited_template",
+      "representativeScreenId": null,
+      "designIrHash": "fbde0eb96e5714d6e233b126102c39e8152ee7c215c617e8225157471dd67f42",
+      "requiredStates": [
+        "ready"
+      ],
+      "requiredActions": [
+        "navigate_document",
+        "return_to_product"
+      ],
+      "copyContractRef": "copy:2679f101ff3bf326e8516853d5d2f51d905b5ddbf9a85a9f4de189ad7af769cf",
+      "verdict": "not_applicable",
+      "publicExposure": true,
+      "lastModified": "2026-11-27"
+    },
+    {
+      "path": "/wheels/chores/",
+      "contentKey": null,
+      "title": "Chores wheel – Spin the Wheel",
+      "description": "Share the housework without the argument: spin for this week's jobs.",
+      "index": true,
+      "canonical": "/wheels/chores/",
+      "navLabel": null,
+      "role": "tool",
+      "routeArchetype": "article_guide",
+      "indexPolicy": "index",
+      "routeCompositionRequired": true,
+      "compositionIdOrTemplateFamily": "route:/wheels/chores/",
+      "coverageMode": "inherited_template",
+      "representativeScreenId": null,
+      "designIrHash": "df8a03eb1b3f7e8590d46b2ea4bbf54cd8035c381aa5e2e87c18fa474a909e96",
+      "requiredStates": [
+        "ready"
+      ],
+      "requiredActions": [
+        "navigate_document",
+        "return_to_product"
+      ],
+      "copyContractRef": "copy:fff93d99efd78258f7171b9f6437bc663b377f12f02ecbea13abd623fad199f9",
+      "verdict": "not_applicable",
+      "publicExposure": true,
+      "lastModified": "2026-11-27"
+    },
+    {
+      "path": "/wheels/prize-draw/",
+      "contentKey": null,
+      "title": "Prize draw wheel – Spin the Wheel",
+      "description": "Draw raffle winners one at a time and remove each as it lands.",
+      "index": true,
+      "canonical": "/wheels/prize-draw/",
+      "navLabel": null,
+      "role": "tool",
+      "routeArchetype": "article_guide",
+      "indexPolicy": "index",
+      "routeCompositionRequired": true,
+      "compositionIdOrTemplateFamily": "route:/wheels/prize-draw/",
+      "coverageMode": "inherited_template",
+      "representativeScreenId": null,
+      "designIrHash": "fe0070a5c10c9b359fd272175da8ad0b54433a9823675f3aadfd569eff4267df",
+      "requiredStates": [
+        "ready"
+      ],
+      "requiredActions": [
+        "navigate_document",
+        "return_to_product"
+      ],
+      "copyContractRef": "copy:871b2f68bb8bceb1eac27754dfd3a890656066ec4fc978de1cf1fc86939058af",
+      "verdict": "not_applicable",
+      "publicExposure": true,
+      "lastModified": "2026-11-27"
+    }
+  ],
+  "nav": [
+    {
+      "label": "Spin the Wheel",
+      "href": "/"
+    },
+    {
+      "label": "Pricing",
+      "href": "/pricing/"
+    },
+    {
+      "label": "Team Generator",
+      "href": "/random-team-generator/"
+    },
+    {
+      "label": "Preset wheels",
+      "href": "/wheels/"
+    }
+  ],
+  "navGroups": [],
+  "navMore": [],
+  "design": {
+    "background": "#14231c",
+    "surface": "#1d3128",
+    "text": "#f3efe4",
+    "accent": "#ffc94a",
+    "font": "system-ui, sans-serif"
+  },
+  "visual": {
+    "layoutArchetype": "a stage and a page: the first screen is one committed dark f",
+    "navigationModel": "header with the mark left, links grouped right (Team Generat",
+    "heroComposition": "oversized display headline on the green field with the keywo",
+    "radiusFamily": "one family: 14px cards, 10px controls, nested corners (inner",
+    "buttonGeometry": "filled rounded rectangles, 48px min height, one amber filled",
+    "surfaceTreatment": "panels are one lightness step up from the ground with no bor",
+    "backgroundTexture": "none — the green field itself is the texture; motion and the",
+    "dataDisplay": "results as the biggest type on screen; counts and audits as",
+    "iconLanguage": "one motif: the segmented wheel with its pointer, redrawn at",
+    "sectionSequence": [
+      "headline",
+      "wheel-stage-card",
+      "how-it-works",
+      "use-case-preset-tiles",
+      "features",
+      "plus-line",
+      "faq",
+      "footer"
+    ],
+    "density": "comfortable",
+    "motion": "responsive",
+    "motionMotifs": [
+      "the wheel's idle breath (4s, 1.2% scale) stops the moment a",
+      "one ease-out deceleration with a tick to the winner",
+      "the winner overlay rises once, 300ms, then is still"
+    ],
+    "typeScale": 1.4,
+    "headingWeight": 600,
+    "headingCase": "none",
+    "contentMeasure": 68,
+    "maxWidth": 1240,
+    "colors": {
+      "background": "#14231c",
+      "surface": "#1d3128",
+      "text": "#f3efe4",
+      "accent": "#ffc94a",
+      "secondary": "#7cc6a6",
+      "gradient": {
+        "angle": 150,
+        "from": "#303722",
+        "to": "#5b552a"
+      },
+      "font": "'Atkinson Hyperlegible',system-ui,sans-serif",
+      "headingFont": "'Fredoka',sans-serif"
+    },
+    "variantDefaults": {
+      "hero": "display headline ~clamp(34px,4vw,56px), keyword in accent co"
+    },
+    "aestheticDirection": "stage-lit wheel — deep pine green, amber instrument, one spo",
+    "customDialect": {
+      "space": {
+        "related": 1,
+        "group": 1.15,
+        "section": 1.3
+      },
+      "headingTracking": "-0.01em",
+      "displayFloorBoost": 1.1,
+      "textureOpacity": 0,
+      "motion": {
+        "duration": 1,
+        "distance": 1,
+        "ease": "cubic-bezier(0.22,0.9,0.3,1)"
+      }
+    },
+    "firstScreenBrief": "",
+    "brandVoice": {
+      "headline": "Fairness you can watch.",
+      "lede": "Paste your list, tap the wheel, and a fair winner lands on screen in seconds — free, no sign-up."
+    },
+    "signatureObject": "",
+    "subjectInventory": []
+  },
+  "composition": {
+    "root": {
+      "type": "shell",
+      "children": [
+        {
+          "type": "nav"
+        },
+        {
+          "type": "row",
+          "children": [
+            {
+              "type": "group",
+              "span": 12,
+              "children": [
+                {
+                  "type": "hero",
+                  "variant": "oversized headline on the green field, one lede line, no bad",
+                  "emphasis": "lead"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "row",
+          "children": [
+            {
+              "type": "tool",
+              "variant": "one bounded stage card: canvas wheel with ivory Tap-to-spin",
+              "span": 12,
+              "capability": "wheel-spinner",
+              "motion": "wheel idles with a slow 4s breath; spin decelerates ease-out"
+            }
+          ]
+        },
+        {
+          "type": "row",
+          "children": [
+            {
+              "type": "prose",
+              "source": "how-it-works",
+              "span": 5
+            },
+            {
+              "type": "cards",
+              "variant": "preset wheels as mini-wheel tiles that load and spin on clic",
+              "source": "use-cases",
+              "span": 7
+            }
+          ]
+        },
+        {
+          "type": "row",
+          "children": [
+            {
+              "type": "cards",
+              "variant": "quiet one-line feature rows sharing the mini-wheel motif",
+              "source": "features",
+              "span": 12
+            }
+          ]
+        },
+        {
+          "type": "row",
+          "children": [
+            {
+              "type": "alert",
+              "variant": "info",
+              "source": "plus",
+              "label": "Plus adds cloud sync, result collection and AI entry ideas: $5 a month, $2.99 for the first month — new customers, offer ends Dec 18, 2026.",
+              "span": 12
+            }
+          ]
+        },
+        {
+          "type": "row",
+          "children": [
+            {
+              "type": "faq",
+              "source": "faq",
+              "span": 9
+            }
+          ]
+        },
+        {
+          "type": "footer"
+        }
+      ]
+    }
+  },
+  "routeCompositions": {
+    "/pricing/": {
+      "root": {
+        "type": "shell",
+        "children": [
+          {
+            "type": "nav"
+          },
+          {
+            "type": "row",
+            "children": [
+              {
+                "type": "hero",
+                "variant": "short free-pricing headline with one primary link back to the wheel",
+                "emphasis": "lead"
+              }
+            ]
+          },
+          {
+            "type": "row",
+            "children": [
+              {
+                "type": "cards",
+                "variant": "three quiet included cards: the wheel, the team splitter, no account or ads",
+                "source": "plans",
+                "span": 12
+              }
+            ]
+          },
+          {
+            "type": "row",
+            "children": [
+              {
+                "type": "table",
+                "variant": "scannable feature comparison under the cards",
+                "source": "comparison",
+                "span": 12,
+                "mobilePresentation": "cards"
+              }
+            ]
+          },
+          {
+            "type": "row",
+            "children": [
+              {
+                "type": "faq",
+                "source": "faq",
+                "span": 9
+              }
+            ]
+          },
+          {
+            "type": "footer"
+          }
+        ]
+      }
+    },
+    "/random-team-generator/": {
+      "root": {
+        "type": "shell",
+        "children": [
+          {
+            "type": "nav"
+          },
+          {
+            "type": "row",
+            "children": [
+              {
+                "type": "hero",
+                "variant": "variant headline naming the team job",
+                "emphasis": "lead"
+              }
+            ]
+          },
+          {
+            "type": "row",
+            "children": [
+              {
+                "type": "tool",
+                "variant": "the site's own stage card preset for the team job: names tex",
+                "span": 12,
+                "capability": "team-generator"
+              }
+            ]
+          },
+          {
+            "type": "row",
+            "children": [
+              {
+                "type": "prose",
+                "source": "how-it-works",
+                "span": 5
+              },
+              {
+                "type": "cards",
+                "source": "use-cases",
+                "span": 7
+              }
+            ]
+          },
+          {
+            "type": "row",
+            "children": [
+              {
+                "type": "prose",
+                "source": "fairness",
+                "span": 8
+              }
+            ]
+          },
+          {
+            "type": "footer"
+          }
+        ]
+      }
+    },
+    "/contact/": {
+      "root": {
+        "type": "shell",
+        "children": [
+          {
+            "type": "nav"
+          },
+          {
+            "type": "row",
+            "children": [
+              {
+                "type": "hero",
+                "emphasis": "lead"
+              },
+              {
+                "type": "form",
+                "span": 7,
+                "capability": "contact-message",
+                "children": [
+                  {
+                    "type": "input",
+                    "label": "Name (optional)",
+                    "name": "name",
+                    "placeholder": "Ms. Rivera"
+                  },
+                  {
+                    "type": "input",
+                    "label": "Email",
+                    "name": "email",
+                    "placeholder": "you@school.edu",
+                    "required": true,
+                    "inputType": "email"
+                  },
+                  {
+                    "type": "select",
+                    "label": "What is this about?",
+                    "name": "topic",
+                    "required": true,
+                    "options": [
+                      "[object Object]",
+                      "[object Object]",
+                      "[object Object]",
+                      "[object Object]"
+                    ]
+                  },
+                  {
+                    "type": "textarea",
+                    "label": "Message",
+                    "name": "message",
+                    "placeholder": "What happened, and what you expected",
+                    "required": true
+                  }
+                ]
+              },
+              {
+                "type": "aside",
+                "span": 5,
+                "children": [
+                  {
+                    "type": "prose",
+                    "source": "what-to-write"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "row",
+            "children": [
+              {
+                "type": "prose",
+                "source": "expectations",
+                "span": 6
+              },
+              {
+                "type": "alert",
+                "variant": "info",
+                "source": "not-handled",
+                "label": "Certified raffles and gambling draws are out of scope — see the terms.",
+                "span": 6
+              }
+            ]
+          },
+          {
+            "type": "footer"
+          }
+        ]
+      }
+    },
+    "/privacy/": {
+      "root": {
+        "type": "shell",
+        "children": [
+          {
+            "type": "nav"
+          },
+          {
+            "type": "row",
+            "children": [
+              {
+                "type": "hero",
+                "emphasis": "lead"
+              }
+            ]
+          },
+          {
+            "type": "row",
+            "children": [
+              {
+                "type": "prose",
+                "source": "what-runs-where",
+                "span": 8
+              },
+              {
+                "type": "prose",
+                "source": "what-is-collected",
+                "span": 4
+              }
+            ]
+          },
+          {
+            "type": "row",
+            "children": [
+              {
+                "type": "prose",
+                "source": "your-choices",
+                "span": 8
+              }
+            ]
+          },
+          {
+            "type": "footer"
+          }
+        ]
+      }
+    },
+    "/terms/": {
+      "root": {
+        "type": "shell",
+        "children": [
+          {
+            "type": "nav"
+          },
+          {
+            "type": "row",
+            "children": [
+              {
+                "type": "hero",
+                "emphasis": "lead"
+              }
+            ]
+          },
+          {
+            "type": "row",
+            "children": [
+              {
+                "type": "prose",
+                "source": "the-service",
+                "span": 8
+              },
+              {
+                "type": "prose",
+                "source": "fair-use",
+                "span": 4
+              }
+            ]
+          },
+          {
+            "type": "row",
+            "children": [
+              {
+                "type": "prose",
+                "source": "subscriptions",
+                "span": 8
+              }
+            ]
+          },
+          {
+            "type": "footer"
+          }
+        ]
+      }
+    },
+    "/": {
+      "root": {
+        "type": "shell",
+        "children": [
+          {
+            "type": "nav"
+          },
+          {
+            "type": "row",
+            "children": [
+              {
+                "type": "group",
+                "span": 12,
+                "children": [
+                  {
+                    "type": "hero",
+                    "variant": "oversized headline on the green field, one lede line, no bad",
+                    "emphasis": "lead"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "row",
+            "children": [
+              {
+                "type": "tool",
+                "variant": "one bounded stage card: canvas wheel with ivory Tap-to-spin",
+                "span": 12,
+                "capability": "wheel-spinner",
+                "motion": "wheel idles with a slow 4s breath; spin decelerates ease-out"
+              }
+            ]
+          },
+          {
+            "type": "row",
+            "children": [
+              {
+                "type": "prose",
+                "source": "how-it-works",
+                "span": 5
+              },
+              {
+                "type": "cards",
+                "variant": "preset wheels as mini-wheel tiles that load and spin on clic",
+                "source": "use-cases",
+                "span": 7
+              }
+            ]
+          },
+          {
+            "type": "row",
+            "children": [
+              {
+                "type": "cards",
+                "variant": "quiet one-line feature rows sharing the mini-wheel motif",
+                "source": "features",
+                "span": 12
+              }
+            ]
+          },
+          {
+            "type": "row",
+            "children": [
+              {
+                "type": "alert",
+                "variant": "info",
+                "source": "plus",
+                "label": "Plus adds cloud sync, result collection and AI entry ideas: $5 a month, $2.99 for the first month — new customers, offer ends Dec 18, 2026.",
+                "span": 12
+              }
+            ]
+          },
+          {
+            "type": "row",
+            "children": [
+              {
+                "type": "faq",
+                "source": "faq",
+                "span": 9
+              }
+            ]
+          },
+          {
+            "type": "footer"
+          }
+        ]
+      }
+    }
+  },
+  "capabilities": [],
+  "toolSpecs": [
+    {
+      "id": "wheel-spinner",
+      "title": "Spin the wheel",
+      "jtbd": "Pasted or typed lines become wheel segments; one click, Enter, or Ctrl+Enter spins the wheel 2–5 seconds with a ticking sound and stops on a winner drawn by crypto.getRandomValues, shown as the largest element on screen.",
+      "inputs": [
+        {
+          "id": "entries",
+          "kind": "text",
+          "label": "Entries, one per line",
+          "placeholder": "Maya Leo Priya",
+          "required": true,
+          "multiline": true,
+          "typical": {
+            "kind": "text",
+            "profile": "8–40 short lines: class names, menu options, prize labels"
+          }
+        }
+      ],
+      "output": {
+        "label": "Winner",
+        "description": "the winning entry rendered as the largest text on screen inside a winner overlay on the wheel, with Spin again / Remove winner / Count +1 keys and a results counter"
+      },
+      "acceptance": [
+        {
+          "id": "spin-single-entry",
+          "given": {
+            "entries": "Pizza"
+          },
+          "expect": [],
+          "actions": [
+            {
+              "do": "type",
+              "target": "[data-entries]",
+              "text": "Pizza"
+            },
+            {
+              "do": "click",
+              "target": "@primary"
+            },
+            {
+              "do": "wait",
+              "ms": 3200
+            },
+            {
+              "do": "assert-attr",
+              "target": "html",
+              "attr": "data-state",
+              "equals": "winner"
+            },
+            {
+              "do": "assert-text",
+              "target": "[data-winner]",
+              "contains": "Pizza"
+            }
+          ]
+        },
+        {
+          "id": "spin-eight",
+          "given": {
+            "entries": "Maya\nLeo\nPriya\nSam\nAisha\nDiego\nNora\nKai"
+          },
+          "expect": [],
+          "actions": [
+            {
+              "do": "type",
+              "target": "[data-entries]",
+              "text": "Maya\nLeo\nPriya\nSam\nAisha\nDiego\nNora\nKai"
+            },
+            {
+              "do": "assert-count",
+              "target": "svg[data-wheel] path[data-segment]",
+              "min": 8,
+              "max": 8
+            },
+            {
+              "do": "expect-canvas-change"
+            },
+            {
+              "do": "click",
+              "target": "@primary"
+            },
+            {
+              "do": "wait",
+              "ms": 3200
+            },
+            {
+              "do": "assert-attr",
+              "target": "html",
+              "attr": "data-state",
+              "equals": "winner"
+            }
+          ]
+        },
+        {
+          "id": "empty-list",
+          "given": {
+            "entries": ""
+          },
+          "expect": [
+            {
+              "kind": "contains",
+              "value": "Add at least one entry"
+            }
+          ],
+          "actions": [
+            {
+              "do": "click",
+              "target": "@primary"
+            }
+          ],
+          "expectedState": "error"
+        }
+      ],
+      "execution": "client",
+      "privacy": "in-browser",
+      "privacyNote": "Entries and the draw never leave the visitor's device; crypto.getRandomValues does the picking, no network request is made."
+    },
+    {
+      "id": "preset-loader",
+      "title": "Load a preset wheel",
+      "jtbd": "One click loads a preset wheel — yes/no, numbers 1–10 or a custom range, dice 1–6, coin flip, letters, truth or dare, what to eat — with its entries filled in and spins it with the same engine.",
+      "inputs": [
+        {
+          "id": "preset",
+          "kind": "select",
+          "label": "Load preset",
+          "required": true,
+          "options": [
+            {
+              "value": "yes-no",
+              "label": "Yes / No"
+            },
+            {
+              "value": "numbers-1-10",
+              "label": "Numbers 1–10"
+            },
+            {
+              "value": "custom-range",
+              "label": "Custom range"
+            },
+            {
+              "value": "dice-1-6",
+              "label": "Dice 1–6"
+            },
+            {
+              "value": "coin-flip",
+              "label": "Coin flip"
+            },
+            {
+              "value": "letters",
+              "label": "Letters A–Z"
+            },
+            {
+              "value": "truth-or-dare",
+              "label": "Truth or Dare"
+            },
+            {
+              "value": "what-to-eat",
+              "label": "What to eat"
+            }
+          ]
+        },
+        {
+          "id": "rfrom",
+          "kind": "number",
+          "label": "From"
+        },
+        {
+          "id": "rto",
+          "kind": "number",
+          "label": "To"
+        }
+      ],
+      "output": {
+        "label": "A loaded wheel",
+        "description": "the preset's entries fill the entries field and redraw the wheel with one segment per entry, ready to spin with the same engine"
+      },
+      "acceptance": [
+        {
+          "id": "yes-no",
+          "given": {
+            "preset": "yes-no"
+          },
+          "expect": [
+            {
+              "kind": "contains",
+              "value": "Yes"
+            }
+          ],
+          "actions": [
+            {
+              "do": "select",
+              "target": "[data-preset]",
+              "value": "yes-no"
+            },
+            {
+              "do": "assert-text",
+              "target": "[data-entries]",
+              "contains": "Yes"
+            },
+            {
+              "do": "assert-text",
+              "target": "[data-entries]",
+              "contains": "No"
+            }
+          ]
+        },
+        {
+          "id": "custom-range",
+          "given": {
+            "preset": "custom-range",
+            "rfrom": "5",
+            "rto": "8"
+          },
+          "expect": [
+            {
+              "kind": "contains",
+              "value": "5\n6\n7\n8"
+            }
+          ],
+          "actions": [
+            {
+              "do": "select",
+              "target": "[data-preset]",
+              "value": "custom-range"
+            },
+            {
+              "do": "type",
+              "target": "[data-rfrom]",
+              "text": "5"
+            },
+            {
+              "do": "type",
+              "target": "[data-rto]",
+              "text": "8"
+            },
+            {
+              "do": "click",
+              "target": "[data-set-range]"
+            },
+            {
+              "do": "assert-text",
+              "target": "[data-entries]",
+              "contains": "5 6 7 8"
+            }
+          ]
+        },
+        {
+          "id": "letters",
+          "given": {
+            "preset": "letters"
+          },
+          "expect": [
+            {
+              "kind": "contains",
+              "value": "Z"
+            }
+          ],
+          "actions": [
+            {
+              "do": "select",
+              "target": "[data-preset]",
+              "value": "letters"
+            },
+            {
+              "do": "assert-text",
+              "target": "[data-entries]",
+              "contains": "Z"
+            }
+          ]
+        }
+      ],
+      "execution": "client",
+      "privacy": "in-browser",
+      "privacyNote": "Presets are static lists built into the page; loading one makes no network request."
+    },
+    {
+      "id": "team-generator",
+      "title": "Random team generator",
+      "jtbd": "Split a pasted name list into N random teams drawn by crypto.getRandomValues and show each team's roster ready to copy.",
+      "inputs": [
+        {
+          "id": "names",
+          "kind": "text",
+          "label": "Names, one per line",
+          "required": true,
+          "multiline": true,
+          "typical": {
+            "kind": "text",
+            "profile": "a class roster of 10–40 names, one per line"
+          }
+        },
+        {
+          "id": "teamcount",
+          "kind": "number",
+          "label": "Number of teams",
+          "required": true
+        }
+      ],
+      "output": {
+        "label": "Team rosters",
+        "description": "Team 1…Team N, each headed 'Team k — m names' where m is the split's roster size (N names into T teams gives ⌈N/T⌉ per team at most, sizes differing by at most one), every name used exactly once, with"
+      },
+      "acceptance": [
+        {
+          "id": "twelve-into-three",
+          "given": {
+            "names": "Ava\nBen\nChloe\nDev\nElla\nFinn\nGrace\nHugo\nIris\nJon\nKim\nLiam",
+            "teamcount": "3"
+          },
+          "expect": [
+            {
+              "kind": "contains",
+              "value": "Team 1 — 4 names"
+            }
+          ],
+          "actions": [
+            {
+              "do": "type",
+              "target": "[data-names]",
+              "text": "Ava\nBen\nChloe\nDev\nElla\nFinn\nGrace\nHugo\nIris\nJon\nKim\nLiam"
+            },
+            {
+              "do": "type",
+              "target": "[data-team-count]",
+              "text": "3"
+            },
+            {
+              "do": "click",
+              "target": "@primary"
+            },
+            {
+              "do": "assert-text",
+              "target": "[data-teams]",
+              "contains": "Team 1 — 4 names"
+            },
+            {
+              "do": "assert-text",
+              "target": "[data-teams]",
+              "contains": "Team 3"
+            },
+            {
+              "do": "assert-text",
+              "target": "[data-teams]",
+              "contains": "Ava"
+            },
+            {
+              "do": "assert-text",
+              "target": "[data-teams]",
+              "contains": "Liam"
+            }
+          ]
+        },
+        {
+          "id": "four-into-two",
+          "given": {
+            "names": "Ada\nBen\nCal\nDana",
+            "teamcount": "2"
+          },
+          "expect": [
+            {
+              "kind": "contains",
+              "value": "Team 2 — 2 names"
+            }
+          ],
+          "actions": [
+            {
+              "do": "type",
+              "target": "[data-names]",
+              "text": "Ada\nBen\nCal\nDana"
+            },
+            {
+              "do": "type",
+              "target": "[data-team-count]",
+              "text": "2"
+            },
+            {
+              "do": "click",
+              "target": "@primary"
+            },
+            {
+              "do": "assert-text",
+              "target": "[data-teams]",
+              "contains": "Team 1 — 2 names"
+            },
+            {
+              "do": "assert-text",
+              "target": "[data-teams]",
+              "contains": "Team 2 — 2 names"
+            },
+            {
+              "do": "assert-text",
+              "target": "[data-teams]",
+              "contains": "Dana"
+            }
+          ]
+        },
+        {
+          "id": "no-names",
+          "given": {
+            "names": "",
+            "teamcount": "3"
+          },
+          "expect": [
+            {
+              "kind": "contains",
+              "value": "Add at least one name"
+            }
+          ],
+          "actions": [
+            {
+              "do": "click",
+              "target": "@primary"
+            }
+          ],
+          "expectedState": "error"
+        }
+      ],
+      "execution": "client",
+      "privacy": "in-browser",
+      "privacyNote": "The roster is split on the visitor's device with crypto.getRandomValues; nothing is uploaded."
+    },
+    {
+      "id": "fairness-audit",
+      "title": "Fairness audit",
+      "jtbd": "Run 10,000 spins of the current wheel at once and show each segment's observed frequency against the uniform expectation.",
+      "inputs": [
+        {
+          "id": "entries",
+          "kind": "text",
+          "label": "Entries, one per line",
+          "required": true,
+          "multiline": true,
+          "typical": {
+            "kind": "text",
+            "profile": "the wheel's current list, 2–40 lines"
+          }
+        }
+      ],
+      "output": {
+        "label": "Frequency table",
+        "description": "each entry's observed count and share of 10,000 spins beside its uniform expected share (10,000 ÷ number of entries, shown as a one-decimal percent, e.g. 16.7% for 6 entries)"
+      },
+      "acceptance": [
+        {
+          "id": "six-segments",
+          "given": {
+            "entries": "a\nb\nc\nd\ne\nf"
+          },
+          "expect": [
+            {
+              "kind": "contains",
+              "value": "16.7%"
+            }
+          ],
+          "actions": [
+            {
+              "do": "type",
+              "target": "[data-entries]",
+              "text": "a\nb\nc\nd\ne\nf"
+            },
+            {
+              "do": "click",
+              "target": "[data-audit]"
+            },
+            {
+              "do": "wait",
+              "ms": 800
+            },
+            {
+              "do": "assert-text",
+              "target": "[data-audit-result]",
+              "contains": "10,000"
+            },
+            {
+              "do": "assert-text",
+              "target": "[data-audit-result]",
+              "contains": "16.7%"
+            },
+            {
+              "do": "assert-text",
+              "target": "[data-audit-result]",
+              "contains": "a"
+            }
+          ]
+        },
+        {
+          "id": "audit-empty",
+          "given": {
+            "entries": ""
+          },
+          "expect": [
+            {
+              "kind": "contains",
+              "value": "Add at least one entry"
+            }
+          ],
+          "actions": [
+            {
+              "do": "click",
+              "target": "[data-audit]"
+            }
+          ],
+          "expectedState": "error"
+        }
+      ],
+      "execution": "client",
+      "privacy": "in-browser",
+      "privacyNote": "The 10,000 spins run locally in a loop; no data leaves the page."
+    },
+    {
+      "id": "contact-message",
+      "title": "Send a message to the owner",
+      "jtbd": "Route a visitor's message — question, bug, business or billing — with their email to the site owner's monitored inbox and confirm the send on screen.",
+      "inputs": [
+        {
+          "id": "name",
+          "kind": "text",
+          "label": "Name (optional)"
+        },
+        {
+          "id": "email",
+          "kind": "text",
+          "label": "Email",
+          "required": true
+        },
+        {
+          "id": "topic",
+          "kind": "select",
+          "label": "What is this about?",
+          "required": true,
+          "options": [
+            {
+              "value": "question",
+              "label": "Question"
+            },
+            {
+              "value": "bug",
+              "label": "Bug"
+            },
+            {
+              "value": "business",
+              "label": "Business"
+            },
+            {
+              "value": "billing",
+              "label": "Billing"
+            }
+          ]
+        },
+        {
+          "id": "message",
+          "kind": "text",
+          "label": "Message",
+          "required": true,
+          "multiline": true
+        }
+      ],
+      "output": {
+        "label": "Confirmation",
+        "description": "a status line confirming the message was sent and naming the reply window ('You will hear back within two business days')"
+      },
+      "acceptance": [
+        {
+          "id": "send-message",
+          "given": {
+            "email": "ms.rivera@school.edu",
+            "topic": "question",
+            "message": "Can I import a roster from a CSV?"
+          },
+          "expect": [
+            {
+              "kind": "contains",
+              "value": "two business days"
+            }
+          ],
+          "actions": [
+            {
+              "do": "type",
+              "target": "[data-contact-email]",
+              "text": "ms.rivera@school.edu"
+            },
+            {
+              "do": "select",
+              "target": "[data-contact-topic]",
+              "value": "question"
+            },
+            {
+              "do": "type",
+              "target": "[data-contact-message]",
+              "text": "Can I import a roster from a CSV?"
+            },
+            {
+              "do": "click",
+              "target": "@primary"
+            },
+            {
+              "do": "assert-text",
+              "target": "[data-contact-status]",
+              "contains": "two business days"
+            }
+          ]
+        },
+        {
+          "id": "no-email",
+          "given": {
+            "email": "",
+            "topic": "bug",
+            "message": ""
+          },
+          "expect": [
+            {
+              "kind": "contains",
+              "value": "Add a valid email"
+            }
+          ],
+          "actions": [
+            {
+              "do": "click",
+              "target": "@primary"
+            }
+          ],
+          "expectedState": "error"
+        }
+      ],
+      "execution": "server",
+      "privacy": "upload-ephemeral",
+      "privacyNote": "The message and email go to the site owner's own inbox through the site's contact route; nothing is stored on the site. Until the owner connects the delivery route the form answers in its declared not"
+    }
+  ],
+  "runtimeRequirements": {
+    "requiresCapability": true,
+    "requiredCapabilityOperations": [],
+    "toolPromises": [
+      "Pasted or typed lines become wheel segments; one click, Enter, or Ctrl+Enter spins the wheel 2–5 seconds with a ticking sound and stops on a winner drawn by crypto.getRandomValues, shown as the largest element on screen.",
+      "One click loads a preset wheel — yes/no, numbers 1–10 or a custom range, dice 1–6, coin flip, letters, truth or dare, what to eat — with its entries filled in and spins it with the same engine.",
+      "Split a pasted name list into N random teams drawn by crypto.getRandomValues and show each team's roster ready to copy.",
+      "Run 10,000 spins of the current wheel at once and show each segment's observed frequency against the uniform expectation."
+    ],
+    "requiresAuth": true,
+    "requiresBilling": true,
+    "publicSalesAllowed": true
+  },
+  "runtimePrivacy": {
+    "analytics": "aggregate",
+    "requiresConsent": false
+  },
+  "demandSelectionHash": "39d4892d7ee3a305616705f0b91a3e1e77763cb975990745d4360ff1a28d5c8a",
+  "assetPlan": [
+    {
+      "path": "/images/classroom-raised-hands.png",
+      "subject": "A real classroom mid-game: students with hands up, eyes forward",
+      "purpose": "",
+      "alt": "Students in a classroom raising their hands during a game",
+      "source": "https://images.pexels.com/photos/12716111/pexels-photo-12716111.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "sourcePage": "https://www.pexels.com/photo/photo-of-a-pupils-sitting-in-a-classroom-with-raised-hands-12716111/",
+      "license": "pexels-license",
+      "attribution": "BOOM 💥 Photography via Pexels",
+      "kind": "decorative",
+      "role": "section-media",
+      "route": "/",
+      "sectionId": "use-cases",
+      "recordKey": null,
+      "generatedSvg": null,
+      "generationPrompt": null,
+      "fallbackQuery": null,
+      "treatment": "cut into a wide tile beside the classroom use case, captioned from the section's own words; no border, one lightness step into the surface tone"
+    },
+    {
+      "path": "/images/carnival-wheel.png",
+      "subject": "A carnival or fairground prize wheel, the category's real-world artefact",
+      "purpose": "",
+      "alt": "A colorful carnival prize wheel at a fairground",
+      "source": "https://images.pexels.com/photos/18403904/pexels-photo-18403904.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "sourcePage": "https://www.pexels.com/photo/colorful-wall-with-toys-in-amusement-park-18403904/",
+      "license": "pexels-license",
+      "attribution": "Elina Volkova via Pexels",
+      "kind": "decorative",
+      "role": "section-media",
+      "route": "/",
+      "sectionId": "features",
+      "recordKey": null,
+      "generatedSvg": null,
+      "generationPrompt": null,
+      "fallbackQuery": null,
+      "treatment": "wide tile beside the features list, tones matched to the amber accent with a slight warm grade; no border"
+    },
+    {
+      "path": "/images/raffle-drum.png",
+      "subject": "",
+      "purpose": "",
+      "alt": "A raffle drum being turned as tickets are drawn",
+      "source": "https://images.pexels.com/photos/27639885/pexels-photo-27639885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "sourcePage": "https://www.pexels.com/photo/a-person-holding-a-ticket-with-numbers-on-it-27639885/",
+      "license": "pexels-license",
+      "attribution": "Jonathan Cooper via Pexels",
+      "kind": "decorative",
+      "role": "section-media",
+      "route": "/",
+      "sectionId": "how-it-works",
+      "recordKey": null,
+      "generatedSvg": null,
+      "generationPrompt": null,
+      "fallbackQuery": null,
+      "treatment": "wide tile beside the how-it-works steps, slightly desaturated so the amber page accents stay the brightest colour nearby"
+    },
+    {
+      "path": "/images/team-lineup.png",
+      "subject": "Kids' sports team lined up on a field, the outcome a fair split aims at",
+      "purpose": "",
+      "alt": "Children's sports team lined up on a grass field",
+      "source": "https://images.pexels.com/photos/15338953/pexels-photo-15338953.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "sourcePage": "https://www.pexels.com/photo/football-players-on-grass-15338953/",
+      "license": "pexels-license",
+      "attribution": "Tim Mossholder via Pexels",
+      "kind": "decorative",
+      "role": "section-media",
+      "route": "/random-team-generator/",
+      "sectionId": "use-cases",
+      "recordKey": null,
+      "generatedSvg": null,
+      "generationPrompt": null,
+      "fallbackQuery": null,
+      "treatment": "wide tile under the team use cases, same one-step surface treatment as the home's tiles"
+    },
+    {
+      "path": "/images/game-night.png",
+      "subject": "Friends around a table mid-game at night, the social moment a wheel serves",
+      "purpose": "",
+      "alt": "Friends around a table playing a game together in the evening",
+      "source": "https://images.pexels.com/photos/4004432/pexels-photo-4004432.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "sourcePage": "https://www.pexels.com/photo/women-snacking-on-pizza-while-playing-monopoly-4004432/",
+      "license": "pexels-license",
+      "attribution": "cottonbro studio via Pexels",
+      "kind": "decorative",
+      "role": "gallery-media",
+      "route": "/",
+      "sectionId": null,
+      "recordKey": null,
+      "generatedSvg": null,
+      "generationPrompt": null,
+      "fallbackQuery": null,
+      "treatment": "one gallery frame in the use-case story, warm-toned to sit with the amber accent; no frame border"
+    },
+    {
+      "path": "/images/entities/price-row.svg",
+      "subject": "Price",
+      "purpose": "",
+      "alt": "Price",
+      "source": "ai-generated-original",
+      "sourcePage": null,
+      "license": "ai-generated-original",
+      "attribution": "",
+      "kind": "decorative",
+      "role": "entity-icon",
+      "route": null,
+      "sectionId": null,
+      "recordKey": "price-row",
+      "generatedSvg": null,
+      "generationPrompt": null,
+      "fallbackQuery": null
+    },
+    {
+      "path": "/images/entities/gen-row.svg",
+      "subject": "Cloud generations a month",
+      "purpose": "",
+      "alt": "Cloud generations a month",
+      "source": "ai-generated-original",
+      "sourcePage": null,
+      "license": "ai-generated-original",
+      "attribution": "",
+      "kind": "decorative",
+      "role": "entity-icon",
+      "route": null,
+      "sectionId": null,
+      "recordKey": "gen-row",
+      "generatedSvg": null,
+      "generationPrompt": null,
+      "fallbackQuery": null
+    },
+    {
+      "path": "/images/entities/signin-row.svg",
+      "subject": "Sign-in",
+      "purpose": "",
+      "alt": "Sign-in",
+      "source": "ai-generated-original",
+      "sourcePage": null,
+      "license": "ai-generated-original",
+      "attribution": "",
+      "kind": "decorative",
+      "role": "entity-icon",
+      "route": null,
+      "sectionId": null,
+      "recordKey": "signin-row",
+      "generatedSvg": null,
+      "generationPrompt": null,
+      "fallbackQuery": null
+    },
+    {
+      "path": "/images/entities/device-row.svg",
+      "subject": "Device use of the wheel",
+      "purpose": "",
+      "alt": "Device use of the wheel",
+      "source": "ai-generated-original",
+      "sourcePage": null,
+      "license": "ai-generated-original",
+      "attribution": "",
+      "kind": "decorative",
+      "role": "entity-icon",
+      "route": null,
+      "sectionId": null,
+      "recordKey": "device-row",
+      "generatedSvg": null,
+      "generationPrompt": null,
+      "fallbackQuery": null
+    }
+  ],
+  "recipeCss": ":root{--background:#14231C;--surface:#1D3128;--surface-raised:#243B31;--text:#F3EFE4;--text-quiet:#C9C4B2;--accent:#FFC94A;--accent-ink:#14231C;--secondary:#7CC6A6;--edge:#6E8A7B;--radius:14px;--radius-small:10px;--font-display:'Fredoka',sans-serif;--font-body:'Atkinson Hyperlegible',system-ui,sans-serif}\nhtml{background:var(--background);color:var(--text);font:400 16px/1.6 var(--font-body)}\nh1,h2,h3{font-family:var(--font-display);font-weight:600;letter-spacing:-0.01em;line-height:1.12}\n.btn-primary{background:var(--accent);color:var(--accent-ink);border:none;border-radius:var(--radius-small);min-height:48px;padding:10px 26px;font:600 18px var(--font-display);cursor:pointer}\n.btn-primary:hover{background:#FFD56E}.btn-primary:active{background:#EAB335}\n.btn-primary[aria-busy=true]{background:#EAB335;cursor:progress}\n.btn-primary:disabled,[aria-disabled=true]{background:#3A5144;color:#8FA296;cursor:not-allowed}\n.btn-secondary{background:transparent;color:var(--accent);border:2px solid var(--accent);border-radius:var(--radius-small);min-height:48px;padding:10px 20px;cursor:pointer}\n.btn-secondary:hover{border-color:#FFD56E;color:#FFD56E}\n.btn-secondary:active{background:rgba(255,201,74,.18);color:#FFD56E}\ntextarea,select,input{background:var(--surface-raised);color:var(--text);border:2px solid var(--edge);border-radius:var(--radius-small);padding:10px 12px;font:inherit;font-size:16px}\ntextarea:hover,select:hover,input:hover{border-color:var(--secondary)}\ntextarea:focus-visible,select:focus-visible,input:focus-visible{border-color:var(--accent);outline:none}\ninput[type=checkbox]:focus-visible{outline:3px solid var(--accent);outline-offset:2px}\nselect{appearance:none}\ninput[type=range]{accent-color:var(--accent);min-height:44px}\ninput[type=checkbox]{accent-color:var(--accent);width:18px;height:18px}\nsvg[data-wheel]{cursor:pointer}\nsvg[data-wheel]:hover .wheelspin{filter:brightness(1.06)}\nsvg[data-wheel]:active .wheelspin{filter:brightness(.94)}\nsvg[data-wheel]:focus-visible{outline:3px solid var(--accent);outline-offset:4px;border-radius:50%}\n.winner-spot{position:absolute;left:0;right:0;bottom:0;padding:18px 20px 22px;background:rgba(20,35,28,.92);border-radius:0 0 var(--radius) var(--radius);text-align:center}\n.winner-spot .wname{font-family:var(--font-display);font-weight:600;font-size:clamp(34px,4.6vw,58px);line-height:1.05;color:var(--accent);word-break:break-word}\n.winner-spot .wkeys{display:flex;gap:10px;justify-content:center;margin-top:12px;flex-wrap:wrap}\n[data-state=winner] .wheelzone .winner-spot{display:block;animation:rise .3s ease-out}\n@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}\na:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}\n.quiet-link{color:var(--accent);text-decoration:underline;min-height:24px;display:inline-block}\n@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}",
+  "qualityContractVersion": "site-factory-v2.1@2.1.0",
+  "runtimeCapabilityTruth": {
+    "executableCapabilityIds": [
+      "wheel-spinner",
+      "preset-loader",
+      "team-generator",
+      "fairness-audit",
+      "contact-message"
+    ],
+    "authE2E": false,
+    "billingE2E": false,
+    "backendMode": "WORKER_REQUIRED"
+  },
+  "fontLinks": [
+    "https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap",
+    "https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap"
+  ],
+  "ogImage": "/images/classroom-raised-hands.png",
+  "brandLogo": "/brand/logo.svg",
+  "footerGroups": [
+    {
+      "title": "Product",
+      "links": [
+        {
+          "label": "Spin the Wheel",
+          "href": "/"
+        },
+        {
+          "label": "Team Generator",
+          "href": "/random-team-generator/"
+        },
+        {
+          "label": "Pricing",
+          "href": "/pricing/"
+        },
+        {
+          "label": "Preset wheels",
+          "href": "/wheels/"
+        },
+        {
+          "label": "Fairness audit",
+          "href": "/randomness/"
+        }
+      ]
+    },
+    {
+      "title": "Trust",
+      "links": [
+        {
+          "label": "Contact",
+          "href": "/contact/"
+        },
+        {
+          "label": "Privacy",
+          "href": "/privacy/"
+        },
+        {
+          "label": "Terms",
+          "href": "/terms/"
+        }
+      ]
+    }
+  ],
+  "footerNote": "Spin the Wheel is an independent site run by its owner and is not affiliated with Wheel of Names, Picker Wheel or any other wheel site. Draws are random and are not a certified lottery or raffle system."
+}

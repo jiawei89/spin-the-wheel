@@ -1,0 +1,15 @@
+{
+  "available": [
+    "/images/carnival-wheel.png",
+    "/images/classroom-raised-hands.png",
+    "/images/game-night.png",
+    "/images/raffle-drum.png",
+    "/images/team-lineup.png",
+    "/images/vision-manifest.json",
+    "/images/entities/price-row.svg",
+    "/images/entities/gen-row.svg",
+    "/images/entities/signin-row.svg",
+    "/images/entities/device-row.svg"
+  ],
+  "missing": []
+}

@@ -1,0 +1,87 @@
+name = "shipsite-site-prj-8d697547-d10-spin-the-wheel"
+main = "worker.mjs"
+compatibility_date = "2026-07-01"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = true
+
+[assets]
+directory = "dist"
+binding = "ASSETS"
+run_worker_first = true
+# An address the site does not have gets the built 404.html with status 404,
+# not an empty body (Mashup Maker's blank 404, 2026-11-24).
+not_found_handling = "404-page"
+
+[observability]
+enabled = true
+
+[version_metadata]
+binding = "CF_VERSION_METADATA"
+
+[vars]
+NEXT_PUBLIC_SITE_URL = "https://prj-8d697547-d10-spin-the-wheel.shipsite-preview.dev"
+SHIPSITE_ENVIRONMENT = "production"
+
+[env.preview]
+name = "shipsite-site-prj-8d697547-d10-spin-the-wheel-preview"
+workers_dev = true
+
+[env.preview.assets]
+directory = "dist"
+binding = "ASSETS"
+run_worker_first = true
+not_found_handling = "404-page"
+
+[env.preview.observability]
+enabled = true
+
+[env.preview.version_metadata]
+binding = "CF_VERSION_METADATA"
+
+[[env.preview.d1_databases]]
+binding = "DB"
+database_name = "spinthewheel-preview"
+database_id = "97075ab4-7aa7-4cfc-8204-8e5d7c9c9ba0"
+migrations_dir = "migrations"
+
+[env.preview.vars]
+NEXT_PUBLIC_SITE_URL = "https://prj-8d697547-d10-spin-the-wheel.shipsite-preview.dev"
+SHIPSITE_ENVIRONMENT = "preview"
+PAYMENT_PROVIDER = "creem"
+PAYMENT_API_BASE = "https://test-api.creem.io/v1"
+INTRO_ENDS_AT = "2026-12-18T23:59:59Z"
+PLUS_MONTHLY_PRODUCT_ID = "prod_1zJq0Fj9dYdBmnIVtELlS2"
+PLUS_MONTHLY_INTRO_PRODUCT_ID = "prod_4aXEt8ga7x4VEtFmG8l0n3"
+PLUS_ANNUAL_PRODUCT_ID = "prod_AYxBq49OzAtravJ1Y3jRz"
+
+[env.production]
+name = "shipsite-site-prj-8d697547-d10-spin-the-wheel"
+workers_dev = true
+
+[env.production.assets]
+directory = "dist"
+binding = "ASSETS"
+run_worker_first = true
+not_found_handling = "404-page"
+
+[env.production.observability]
+enabled = true
+
+[env.production.version_metadata]
+binding = "CF_VERSION_METADATA"
+
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "spinthewheel-production"
+database_id = "5984da14-ef9d-41b5-a5df-9b31a24f2f71"
+migrations_dir = "migrations"
+
+[env.production.vars]
+NEXT_PUBLIC_SITE_URL = "https://prj-8d697547-d10-spin-the-wheel.shipsite-preview.dev"
+SHIPSITE_ENVIRONMENT = "production"
+PAYMENT_PROVIDER = "creem"
+PAYMENT_API_BASE = "https://api.creem.io/v1"
+INTRO_ENDS_AT = "2026-12-18T23:59:59Z"
+PLUS_MONTHLY_PRODUCT_ID = "prod_3gdfbUVg9HrHueNvHiOTF"
+PLUS_MONTHLY_INTRO_PRODUCT_ID = "prod_2WgnpspZBWNBU1XLFCwPBH"
+PLUS_ANNUAL_PRODUCT_ID = "prod_7IvnjcUmVlKZouywb59Pn1"

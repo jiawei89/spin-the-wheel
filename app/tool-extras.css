@@ -1,0 +1,510 @@
+/* Styles for the inner pages' own compositions and the shared primitives
+ * that globals.css does not carry: the team split stage, the contact card,
+ * the pricing figure band and the legal article column. Same tokens. */
+
+.capability-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.row2 {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 14px;
+  align-items: end;
+}
+
+.wheelquiet {
+  justify-content: flex-start;
+  margin-top: 6px;
+}
+
+.set-btn {
+  align-self: end;
+}
+
+/* Links inside reading copy: distinguishable without colour. */
+.section-body a,
+.faq-a a,
+.article a,
+.lede a,
+.free-line a,
+.plan-line a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.section-body a:hover,
+.faq-a a:hover,
+.article a:hover,
+.lede a:hover,
+.free-line a:hover,
+.plan-line a:hover {
+  color: #ffd56e;
+}
+
+/* Nav and footer links sized for a thumb: 44px targets where they fit. */
+.site-nav a,
+.mobile-nav a {
+  padding: 14px 10px;
+}
+
+.footer-links a,
+.footer-groups a {
+  padding: 12px 10px;
+  display: inline-block;
+}
+
+/* Random team generator: roster input beside the teams it produces. */
+.splitstage {
+  display: grid;
+  grid-template-columns: minmax(300px, 5fr) 7fr;
+  gap: 26px;
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 26px 28px;
+  margin-top: 30px;
+}
+
+.splitpanel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.field-count input {
+  max-width: 130px;
+}
+
+.splitresults {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.empty-results {
+  color: var(--text-quiet);
+  padding: 34px 10px;
+  margin: 0;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 14px;
+}
+
+.team-card {
+  background: var(--surface-raised);
+  border-radius: 10px;
+  padding: 14px 16px 16px;
+  animation: rise 0.25s ease-out both;
+}
+
+.team-head {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text);
+  margin: 0 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.team-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+  flex: none;
+}
+
+.team-names {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 15.5px;
+  color: var(--text);
+}
+
+/* Contact: one centered card, the form the whole page serves. */
+.contact-main {
+  max-width: 780px;
+}
+
+.contact-card {
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 28px 30px;
+  margin-top: 30px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: 14px;
+}
+
+.status-line {
+  min-height: 24px;
+  margin: 0;
+  color: var(--text-quiet);
+  font-size: 15px;
+}
+
+.status-line[data-kind="sent"] {
+  color: var(--secondary);
+}
+
+.status-line[data-kind="error"] {
+  color: var(--danger);
+}
+
+/* Pricing: the one figure a free site has. */
+.pricing-main {
+  max-width: 900px;
+}
+
+.price-figure {
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 26px 30px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.price-figure .figure {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: clamp(40px, 5vw, 56px);
+  line-height: 1;
+  color: var(--accent);
+}
+
+.price-figure p {
+  margin: 0;
+  color: var(--text-quiet);
+  max-width: 52ch;
+}
+
+.price-figure .btn-secondary {
+  margin-top: 6px;
+}
+
+/* Legal article: a centered reading column. */
+.article-main {
+  display: block;
+}
+
+.article {
+  max-width: var(--measure);
+  margin: 0 auto;
+}
+
+.article h1 {
+  margin-bottom: 12px;
+}
+
+.article .lede {
+  color: var(--text-quiet);
+}
+
+.article-end {
+  margin-top: 44px;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .splitstage {
+    grid-template-columns: 1fr;
+    padding: 22px;
+  }
+
+  .row2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-card {
+    padding: 20px 18px;
+  }
+
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+
+  .price-figure {
+    padding: 20px 18px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- additions: lede remainder, wheel figure, wide card grid ---------- */
+
+/* The hero sentence's remainder continues below the stage, at the reading
+   measure the page's sections use. */
+.afterstage {
+  max-width: var(--measure);
+  margin: 26px auto 0;
+  color: var(--text);
+}
+
+/* The starter wheel figure: the tool's own drawing, as evidence in the copy. */
+.wheel-figure {
+  margin: 30px auto 0;
+  max-width: 440px;
+  text-align: center;
+}
+.wheel-figure svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.wheel-figure figcaption {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--text-quiet);
+  line-height: 1.5;
+}
+
+/* Contact's writing prompts sit two to a row, so a prompt's sentence gets a
+   reading measure instead of a two-word line. */
+.card-grid.wide {
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 18px;
+}
+@media (max-width: 560px) {
+  .card-grid.wide {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- preset table + recorded fairness audit figures ---------- */
+
+/* The preset wheels as a real table: the same records the tool's menu loads. */
+.preset-table-fig { margin: 26px 0 0; max-width: 880px; }
+.preset-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.preset-table caption {
+  text-align: left; font-family: var(--font-head); font-weight: 600;
+  color: var(--text); font-size: 16px; margin-bottom: 8px;
+}
+.preset-table th, .preset-table td { text-align: left; padding: 9px 12px; background: var(--surface); }
+.preset-table thead th {
+  font-family: var(--font-head); font-weight: 600;
+  color: var(--text-quiet); font-size: 13.5px;
+}
+.preset-table tbody th { font-family: var(--font-head); font-weight: 600; color: var(--text); }
+.preset-table td { color: var(--text-quiet); }
+@media (max-width: 560px) {
+  .preset-table thead { display: none; }
+  .preset-table tr { display: block; padding: 9px 2px; }
+  .preset-table tr + tr { border-top: 1px solid var(--edge-soft); }
+  .preset-table tbody th, .preset-table td { display: block; padding: 1px 0; font-size: 14.5px; background: none; }
+  .preset-table td::before { content: attr(data-label) " — "; color: var(--secondary); font-weight: 600; }
+}
+
+/* The recorded fairness audit: real bars from the site's own 100,000-spin run. */
+.fair-figure { margin: 26px 0 0; max-width: 720px; }
+.fair-figure svg { width: 100%; height: auto; display: block; }
+.fair-figure figcaption {
+  margin-top: 10px; font-size: 14px;
+  color: var(--text-quiet); line-height: 1.5;
+}
+
+/* ---------- pricing plans ---------- */
+.plans-bar { margin-top: 18px; }
+.billing-toggle {
+  display: inline-flex; gap: 4px; padding: 4px;
+  background: var(--surface); border: 1px solid var(--edge); border-radius: 999px;
+}
+.billing-toggle button {
+  font: inherit; font-size: 15px; font-weight: 600; color: var(--text);
+  background: transparent; border: 0; border-radius: 999px;
+  padding: 8px 18px; min-height: 40px; cursor: pointer;
+}
+.billing-toggle button:hover { color: var(--accent); }
+.billing-toggle button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+.plan-grid {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px;
+  margin-top: 16px; max-width: 1020px;
+}
+@media (max-width: 760px) {
+  .plan-grid { grid-template-columns: 1fr; }
+}
+.plan-card {
+  background: var(--surface); border: 0;
+  border-radius: var(--radius); padding: 22px 22px 20px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.plan-card.featured { border: 2px solid var(--accent); background: var(--surface-raised); }
+.plan-name { font-family: var(--font-head); font-size: 22px; }
+.plan-lead, .plan-prefix, .plan-under, .plan-line { color: var(--text-quiet); font-size: 15px; }
+.plan-lead s, .plan-under s { color: var(--text); }
+.price-now { display: flex; align-items: baseline; gap: 8px; }
+.price-now strong {
+  font-family: var(--font-head); font-size: 44px; font-weight: 700;
+  color: var(--accent); line-height: 1;
+}
+.plan-card:not(.featured) .price-now strong { color: var(--text); }
+.price-unit { color: var(--text-quiet); font-size: 15px; }
+.plan-offer { color: var(--text-quiet); font-size: 14px; }
+.plan-cta { margin-top: auto; min-height: 44px; }
+.compare-table caption {
+  caption-side: top; text-align: left; padding-bottom: 8px;
+  font-family: var(--font-head); color: var(--text-quiet); font-size: 14px;
+}
+
+/* ---------- preset wheels hub + preset page chrome ---------- */
+.hub-grid {
+  list-style: none; margin: 22px 0 0; padding: 0;
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px;
+}
+.hub-card {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  background: var(--surface); border-radius: var(--radius);
+  padding: 18px 14px 16px; text-align: center; text-decoration: none;
+  color: var(--text); min-height: 44px;
+  transition: background 160ms ease;
+}
+.hub-card:hover { background: var(--surface-raised); }
+.hub-card:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.miniwheel { width: 96px; height: 96px; }
+.hub-card-title { font-family: var(--font-head); font-weight: 600; font-size: 16px; }
+.hub-card-desc { font-size: 13.5px; color: var(--text-quiet); line-height: 1.45; }
+.crumb { margin: 0 0 10px; font-size: 14px; }
+.crumb a { color: var(--accent); }
+.related-wheels { margin-top: 34px; }
+.related-wheels h2 { font-size: 20px; }
+.related-list {
+  list-style: none; margin: 10px 0 0; padding: 0;
+  display: flex; flex-wrap: wrap; gap: 8px 10px;
+}
+.related-list a {
+  display: inline-block; padding: 8px 14px; min-height: 44px; box-sizing: border-box;
+  background: var(--surface); border-radius: 999px; color: var(--text);
+  text-decoration: none; font-size: 14.5px; line-height: 28px;
+}
+.related-list a:hover { background: var(--surface-raised); color: var(--accent); }
+.related-list a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+/* The visitor-run 10,000-spin audit. */
+.fairaudit { margin: 18px 0 0; }
+.fairaudit-run { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.fairaudit-progress {
+  flex: 1 1 200px; height: 10px; border-radius: 999px;
+  background: var(--surface-raised); overflow: hidden; min-width: 160px;
+}
+.fairaudit-progress-fill { height: 100%; background: var(--accent); border-radius: 999px; }
+.fairaudit-count { font-size: 14px; color: var(--text-quiet); font-variant-numeric: tabular-nums; }
+.audit-table { border-collapse: collapse; margin-top: 16px; min-width: 460px; }
+.audit-table th, .audit-table td { padding: 9px 14px; text-align: right; font-variant-numeric: tabular-nums; }
+.audit-table thead th {
+  font-family: var(--font-head); font-size: 13.5px; color: var(--text-quiet);
+  text-align: right; border-bottom: 2px solid var(--edge);
+}
+.audit-table tbody th { text-align: left; font-weight: 600; }
+.audit-table tbody tr + tr { border-top: 1px solid var(--edge); }
+
+@media (max-width: 900px) {
+  .hub-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .hub-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .miniwheel { width: 76px; height: 76px; }
+}
+
+/* ---------- shared example rows + the home's secondary tool bands ---------- */
+.cap-presets { display: contents; }
+.examplerow { display: flex; gap: 8px 14px; align-items: baseline; flex-wrap: wrap; margin: 0; }
+.example-credit { font-size: 13px; color: var(--text-quiet); }
+.band-more { margin: 14px 0 0; }
+.audit-field { margin: 0 0 4px; }
+.audit-more { font-size: 13px; color: var(--text-quiet); margin: 8px 0 0; }
+
+/* ---------- pricing plans (billing toggle + cards + comparison) ---------- */
+.plans-block { margin-top: 18px; }
+.plan-flag { margin: 0 0 -4px; font-size: 13.5px; font-weight: 600; color: var(--accent); }
+.plan-card-popular { border: 2px solid var(--accent); background: var(--surface-raised); }
+.plan-price { display: flex; align-items: baseline; gap: 10px; margin: 0; }
+.plan-big { font-family: var(--font-head); font-size: 44px; font-weight: 700; line-height: 1; color: var(--text); }
+.plan-card-popular .plan-big { color: var(--accent); }
+.plan-strike { color: var(--text-quiet); text-decoration: line-through; font-size: 18px; }
+.plan-per { color: var(--text-quiet); font-size: 15px; }
+.plan-sub { margin: 0; color: var(--text-quiet); font-size: 14.5px; }
+.plan-note { margin: 0; font-size: 13.5px; color: var(--text); }
+.plan-quota { margin: 0; color: var(--text-quiet); font-size: 14.5px; }
+.plan-features { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 7px; font-size: 14.5px; }
+.plan-features li { padding-left: 16px; position: relative; }
+.plan-features li::before {
+  content: ""; position: absolute; left: 0; top: 8px;
+  width: 7px; height: 7px; border-radius: 999px; background: var(--accent);
+}
+.plan-body { margin: 2px 0 0; color: var(--text-quiet); font-size: 14.5px; line-height: 1.5; }
+.plans-block .btn-primary[hidden], .plans-block .btn-secondary[hidden] { display: none; }
+.plan-annual-switch { margin: 14px 0 0; font-size: 14.5px; }
+.trust-line { margin: 20px 0 0; font-size: 14px; color: var(--text-quiet); }
+.manage-row { margin: 10px 0 0; }
+.plans-block .plan-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 860px; }
+.compare-wrap { margin-top: 18px; }
+.compare-table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+.compare-table th, .compare-table td { text-align: left; padding: 10px 14px; vertical-align: top; }
+.compare-table tbody th { font-weight: 600; color: var(--text); }
+.compare-table td { color: var(--text-quiet); }
+.compare-table thead th { font-family: var(--font-head); font-size: 15px; }
+@media (max-width: 700px) {
+  .compare-table thead { display: none; }
+  .compare-table tbody tr {
+    display: block; background: var(--surface);
+    border-radius: var(--radius); padding: 10px 14px; margin-bottom: 10px;
+  }
+  .compare-table tbody th, .compare-table tbody td { display: block; padding: 3px 0; }
+  .compare-table tbody td::before { content: attr(data-label) " — "; color: var(--secondary); font-weight: 600; }
+  .plans-block .plan-grid { grid-template-columns: 1fr; max-width: 560px; }
+}
+.section-lede { color: var(--text-quiet); font-size: 15.5px; max-width: var(--measure); }
+
+/* ---------- Plus use points (S4): inline notes and results ---------- */
+.usepoint-note {
+  margin: 6px 0 0;
+  color: var(--secondary);
+  font-size: 13px;
+  line-height: 1.45;
+}
+.usepoint-msg {
+  margin: 4px 0 0;
+  color: var(--text-quiet);
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+.quiet-link:disabled { opacity: 0.55; cursor: default; }
