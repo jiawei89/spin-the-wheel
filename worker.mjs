@@ -95,6 +95,29 @@ export function httpsRedirectStatus(method) {
   return method === "GET" || method === "HEAD" ? 301 : 308;
 }
 
+// - A production Worker reached on its workers.dev address sends the visitor
+//   to the site's own domain (NEXT_PUBLIC_SITE_URL) with the same path and
+//   query, so connecting a domain later moves visitors and search ranking to
+//   it. Never the other way round, never on the preview (its workers.dev
+//   address is the address QA and the owner test), and a request that already
+//   carries the domain is served as it is. The https step above has already
+//   secured the scheme when this runs.
+export function workersDevRedirectFor(requestUrl, siteUrl) {
+  let url;
+  let site;
+  try { url = new URL(requestUrl); } catch { return null; }
+  try { site = new URL(siteUrl); } catch { return null; }
+  const host = url.hostname.toLowerCase();
+  const siteHost = site.hostname.toLowerCase();
+  if (!siteHost || host === siteHost) return null;
+  if (host !== "workers.dev" && !host.endsWith(".workers.dev")) return null;
+  if (url.protocol !== "https:") return null;
+  site.protocol = "https:";
+  site.pathname = url.pathname;
+  site.search = url.search;
+  return site.toString();
+}
+
 // - The asset layer's trailing-slash redirect (/pricing -> /pricing/) is a
 //   307, which says "temporary"; the slash URL is the canonical one for
 //   good, so the redirect says so (308 keeps the method like 307 does).
@@ -116,6 +139,11 @@ export default {
   async fetch(request, env) {
     const secureUrl = httpsRedirectFor(request.url);
     if (secureUrl) return new Response(null, { status: httpsRedirectStatus(request.method), headers: { Location: secureUrl, "Cache-Control": "public, max-age=3600" } });
+    // Production-only: the workers.dev shadow address points at the domain.
+    if (env.SHIPSITE_ENVIRONMENT === "production" && env.NEXT_PUBLIC_SITE_URL) {
+      const siteUrl = workersDevRedirectFor(request.url, env.NEXT_PUBLIC_SITE_URL);
+      if (siteUrl) return new Response(null, { status: 301, headers: { Location: siteUrl, "Cache-Control": "public, max-age=3600" } });
+    }
     // The site's own /api routes answer before the asset layer: they are
     // never treated as pages and never slash-redirected.
     const requestPath = new URL(request.url).pathname;

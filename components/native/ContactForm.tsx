@@ -18,9 +18,9 @@ const SAMPLE_MESSAGE = "Can I import a roster from a CSV?";
 
 export default function ContactForm({ t, ownsState = true }: { t: UiStrings; ownsState?: boolean }) {
   const [name, setName] = useState("");
-  const [email, setEmail] = useState(SAMPLE_EMAIL);
+  const [email, setEmail] = useState("");
   const [topic, setTopic] = useState(SAMPLE_TOPIC);
-  const [message, setMessage] = useState(SAMPLE_MESSAGE);
+  const [message, setMessage] = useState("");
   const [status, setStatus] = useState<Status>({ kind: "idle", text: "" });
   const [blocker, setBlocker] = useState("");
 

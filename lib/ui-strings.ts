@@ -53,6 +53,14 @@ export type UiStrings = {
   exitFullscreenLink: string;
   exportLink: string;
   exportDone: string;
+  manageBilling: string;
+  plusSyncLabel: string;
+  plusIdeasLabel: string;
+  plusCollectLabel: string;
+  plusWorking: string;
+  plusNeedSignIn: string;
+  plusUpgrade: string;
+  plusFailed: string;
   settingsLink: string;
   settingsTitle: string;
   soundLabel: string;
@@ -216,6 +224,14 @@ const en: UiStrings = {
   exitFullscreenLink: "Exit fullscreen",
   exportLink: "Export wheel file",
   exportDone: "Wheel file saved as spin-the-wheel.json",
+  manageBilling: "Manage subscription",
+  plusSyncLabel: "Save to cloud (Plus)",
+  plusIdeasLabel: "Entry ideas (Plus)",
+  plusCollectLabel: "Collect result (Plus)",
+  plusWorking: "Working…",
+  plusNeedSignIn: "Sign in first — cloud sync, collections and AI ideas live in your account.",
+  plusUpgrade: "This one comes with Plus — see the pricing page.",
+  plusFailed: "That did not go through. Try again in a moment.",
   settingsLink: "Settings",
   settingsTitle: "Wheel settings",
   soundLabel: "Sound",

@@ -1799,8 +1799,8 @@
       "Split a pasted name list into N random teams drawn by crypto.getRandomValues and show each team's roster ready to copy.",
       "Run 10,000 spins of the current wheel at once and show each segment's observed frequency against the uniform expectation."
     ],
-    "requiresAuth": false,
-    "requiresBilling": false,
+    "requiresAuth": true,
+    "requiresBilling": true,
     "publicSalesAllowed": false
   },
   "runtimePrivacy": {
@@ -2041,5 +2041,7 @@
       ]
     }
   ],
-  "footerNote": "Spin the Wheel is an independent site run by its owner and is not affiliated with Wheel of Names, Picker Wheel or any other wheel site. Draws are random and are not a certified lottery or raffle system."
+  "footerNote": "Spin the Wheel is an independent site run by its owner and is not affiliated with Wheel of Names, Picker Wheel or any other wheel site. Draws are random and are not a certified lottery or raffle system.",
+  "contactEmail": "hello@spinthewheel.date",
+  "publicSalesAllowed": true
 }

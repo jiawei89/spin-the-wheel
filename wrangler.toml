@@ -57,6 +57,12 @@ PLUS_ANNUAL_PRODUCT_ID = "prod_AYxBq49OzAtravJ1Y3jRz"
 [env.production]
 name = "shipsite-site-prj-8d697547-d10-spin-the-wheel"
 workers_dev = true
+# The owner's domain (spinthewheel.date, apex + www). Recorded here so the
+# go-live deploy attaches both as custom domains, DNS records included. Until
+# that deploy nothing serves the domain: no route, no DNS record, no redirect
+# is created for it beforehand (the production Worker has no approved version
+# until the owner approves go-live, and would answer 1101).
+routes = [{ pattern = "spinthewheel.date", custom_domain = true }, { pattern = "www.spinthewheel.date", custom_domain = true }]
 
 [env.production.assets]
 directory = "dist"
@@ -77,7 +83,7 @@ database_id = "5984da14-ef9d-41b5-a5df-9b31a24f2f71"
 migrations_dir = "migrations"
 
 [env.production.vars]
-NEXT_PUBLIC_SITE_URL = "https://prj-8d697547-d10-spin-the-wheel.shipsite-preview.dev"
+NEXT_PUBLIC_SITE_URL = "https://spinthewheel.date"
 SHIPSITE_ENVIRONMENT = "production"
 PAYMENT_PROVIDER = "creem"
 PAYMENT_API_BASE = "https://api.creem.io/v1"

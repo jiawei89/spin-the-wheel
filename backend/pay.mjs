@@ -173,25 +173,28 @@ async function handlePlan(request, env, url) {
   const account = await currentAccount(env, request);
   const tier = await paidTier(env, account);
   const used = account ? await generationsUsed(env, account) : 0;
-  // Sales are paused (the site is free): the plan endpoint reports the free
-  // limits and says so, without advertising any paid offer.
+  // GET /api/pay/plan is the fact sheet QA and the pricing page read: every
+  // tier's price and limits, straight from the contract constants above.
   return json({
     paid: Boolean(tier),
     plan: tier || null,
     limits: tierLimits(tier),
-    used: { cloudGenerations: used },
+    used: { metered_units_this_month: used },
     plans: {
-      free: { limits: FREE_LIMITS },
+      free: { name: "Free", price_usd: 0, billing_period: null, limits: FREE_LIMITS },
+      plus: {
+        name: "Plus",
+        price_usd: 5,
+        billing_period: "month",
+        intro: { price_usd: 2.99, ends_at: env.INTRO_ENDS_AT || null },
+        limits: PLUS_LIMITS,
+      },
+      "plus-annual": { name: "Plus yearly", price_usd: 48, billing_period: "year", limits: PLUS_LIMITS },
     },
-    offers: [],
-    sales_paused: true,
   });
 }
 
 async function handleCheckout(request, env, url) {
-  // Sales are paused (the site is free): refuse before any account lookup or
-  // provider call. The plan plumbing below stays for the payments-on change.
-  return json(SALES_PAUSED, 403);
   const plan = url.searchParams.get("plan") || "plus";
   const spec = TIERS[plan];
   if (!spec) return json({ error: "unknown_plan", message: "That plan does not exist." }, 404);
@@ -270,8 +273,6 @@ async function handleReturn(request, env, url) {
 }
 
 async function handlePortal(request, env, url) {
-  // Sales are paused (the site is free): there is no billing portal to open.
-  return json(SALES_PAUSED, 403);
   const account = await currentAccount(env, request);
   if (!account) return accountGate(request, url);
   if (!account.creem_customer_id) {

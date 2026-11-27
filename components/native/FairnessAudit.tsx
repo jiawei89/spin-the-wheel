@@ -10,7 +10,18 @@ const TOTAL = 10000;
 const MAX_ENTRIES = 1000;
 const SHOWN_ROWS = 12;
 
-export default function FairnessAudit({ t, ownsState = true }: { t: UiStrings; ownsState?: boolean }) {
+export default function FairnessAudit({
+  t,
+  ownsState = true,
+  secondary = false,
+}: {
+  t: UiStrings;
+  ownsState?: boolean;
+  /** Embedded where another tool already owns the page's selectors: the
+   *  harness-facing attrs move to audit-prefixed names so the page's primary
+   *  tool stays the one [data-entries] / [data-audit] on the route. */
+  secondary?: boolean;
+}) {
   const [entriesText, setEntriesText] = useState(SAMPLE_ENTRIES.join("\n"));
   const [done, setDone] = useState(0);
   const [running, setRunning] = useState(false);
@@ -42,7 +53,9 @@ export default function FairnessAudit({ t, ownsState = true }: { t: UiStrings; o
 
   function run() {
     if (running) return;
-    const list = parseEntries(entriesText);
+    // The box's DOM value is the truth (a visitor or a test can set it
+    // directly); the state mirrors it for the redraw.
+    const list = parseEntries(listRef.current?.value ?? entriesText);
     if (list.length < 2) {
       setErrorLine(t.auditEmpty);
       setResult(null);
@@ -95,8 +108,9 @@ export default function FairnessAudit({ t, ownsState = true }: { t: UiStrings; o
         <textarea
           id="auditEntries"
           className="audit-entries"
-          data-entries
-          data-tool-input="entries"
+          {...(secondary
+            ? { "data-audit-entries": true, "data-tool-input": "audit-entries" }
+            : { "data-entries": true, "data-tool-input": "entries" })}
           ref={listRef}
           rows={4}
           spellCheck={false}
@@ -111,7 +125,7 @@ export default function FairnessAudit({ t, ownsState = true }: { t: UiStrings; o
         <button
           type="button"
           className="quiet-link"
-          data-shipsite-example
+          {...(secondary ? { "data-audit-example": true } : { "data-shipsite-example": true })}
           onClick={() => {
             setEntriesText(SAMPLE_ENTRIES.join("\n"));
             setErrorLine("");
@@ -119,7 +133,7 @@ export default function FairnessAudit({ t, ownsState = true }: { t: UiStrings; o
         >
           {t.starterListLink}
         </button>
-        <span className="example-credit" data-shipsite-example-credit>
+        <span className="example-credit" {...(secondary ? { "data-audit-example-credit": true } : { "data-shipsite-example-credit": true })}>
           {t.sampleCredit}
         </span>
       </p>
@@ -127,8 +141,7 @@ export default function FairnessAudit({ t, ownsState = true }: { t: UiStrings; o
         <button
           className="btn-primary primary"
           type="button"
-          data-audit
-          data-jtbd-action="audit"
+          {...(secondary ? {} : { "data-audit": true, "data-jtbd-action": "audit" })}
           onClick={run}
           disabled={running}
         >
@@ -158,7 +171,7 @@ export default function FairnessAudit({ t, ownsState = true }: { t: UiStrings; o
         </p>
       ) : null}
       {result ? (
-        <div data-tool-output data-audit-result>
+        <div {...(secondary ? { "data-audit-output": true } : { "data-tool-output": true })} {...(secondary ? { "data-audit-home-result": true } : { "data-audit-result": true })}>
           <div className="table-scroll">
             <table className="audit-table">
               <thead>

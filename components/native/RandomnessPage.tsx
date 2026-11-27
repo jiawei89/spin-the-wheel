@@ -25,6 +25,7 @@ export default async function RandomnessPage() {
         <article>
           <h1>{content.h1}</h1>
           <p className="lede">{content.heroText}</p>
+          <FairnessAudit t={t} />
           {mech ? (
             <section className="section" id={mech.id}>
               <h2>{mech.title}</h2>
@@ -39,7 +40,6 @@ export default async function RandomnessPage() {
               <div className="section-body">
                 <RichText text={yours.body} />
               </div>
-              <FairnessAudit t={t} />
             </section>
           ) : null}
           {published ? (

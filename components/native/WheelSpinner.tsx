@@ -61,7 +61,7 @@ export default function WheelSpinner({ t, presetId }: { t: UiStrings; presetId?:
   const [exportLine, setExportLine] = useState("");
   const [lastRemoved, setLastRemoved] = useState<{ label: string; index: number } | null>(null);
   const [fsActive, setFsActive] = useState(false);
-  const [confettiOn, setConfettiOn] = useState(false);
+  const [confettiOn, setConfettiOn] = useState(true);
   const [hydrated, setHydrated] = useState(false);
 
   const listRef = useRef<HTMLTextAreaElement>(null);
