@@ -1,0 +1,106 @@
+{
+  "title": "Random Team Generator – Split Names into Teams – Spin the Wheel",
+  "description": "Paste a name list, pick how many teams, and this random team generator splits them fairly. Free, no sign-up, teams ready to copy.",
+  "h1": "Random team generator",
+  "heroText": "Paste your list of names, say how many teams you need, and the random team generator on this page splits them into balanced groups drawn by a cryptographic random source. It runs free in your browser, with no sign-up, and every team's roster is ready to copy the moment it appears.",
+  "ctas": [
+    {
+      "label": "Split my names into teams",
+      "href": "/random-team-generator/",
+      "primary": true
+    },
+    {
+      "label": "See pricing",
+      "href": "/pricing/",
+      "primary": false
+    }
+  ],
+  "sections": [
+    {
+      "id": "how-it-works",
+      "title": "How it works",
+      "body": "Three steps, a few seconds. The same engine that spins the wheel draws the teams.",
+      "steps": [
+        {
+          "title": "Paste your names",
+          "body": "Type or paste your list, one name per line. A class roster, a meeting attendee list or a set of player names all work the same way; order does not matter, because the draw does not follow the list."
+        },
+        {
+          "title": "Choose the number of teams",
+          "body": "Say how many groups you want. The tool divides your list across them: 24 names in 4 teams gives 6 per team, and a list that does not divide evenly spreads the remainder so no team sits short without a reason."
+        },
+        {
+          "title": "Draw the teams",
+          "body": "One click assigns every name to a group using crypto.getRandomValues, the browser's cryptographic random source, the same one behind every spin on this site. Nothing about the names decides where they land."
+        },
+        {
+          "title": "Copy each roster",
+          "body": "Every team's roster appears as its own block, ready to copy into your notes, slides or group chat. Redraw as often as you like; each run is a fresh, independent draw."
+        }
+      ]
+    },
+    {
+      "id": "fairness",
+      "title": "Why the draw is fair",
+      "body": "Fairness is the whole point of a random draw, so it is checked, not assumed. The assignment uses crypto.getRandomValues, not a clock-based shortcut that can favour the first names in a list. You can see the evidence yourself: the wheel on the [home page](/) can run 10,000 spins at once and shows each segment's observed frequency against the even expectation, so unevenness would be visible, not hidden. Team draws come from the same source, and no name is given a heavier weight than another."
+    },
+    {
+      "id": "use-cases",
+      "title": "Where people use it",
+      "body": "Teachers, coaches and organisers reach for this page when a list needs groups nobody can argue with.",
+      "items": [
+        {
+          "title": "Classroom groups",
+          "body": "A [classroom name picker](/) and a team splitter solve different moments of the same lesson: pick one student to answer, then split the class into project groups. Teachers paste the roster once and redraw per activity."
+        },
+        {
+          "title": "Sports and games",
+          "body": "Club nights, board-game meetups and pickup matches need balanced sides fast. Paste the player names, choose the number of teams, and the result is on screen before anyone starts arguing about captains."
+        },
+        {
+          "title": "Workshops and events",
+          "body": "Breakout groups, table assignments and icebreaker pairs. The draw is visibly impartial, which matters most when the audience is watching you make it."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "How many names can I split at once?",
+      "answer": "The split runs on your device, so a full class roster, a club list or a conference group works without waiting. Choose any number of teams up to the size of your list; a team count higher than the name count leaves empty teams, so keep it at or below."
+    },
+    {
+      "question": "Can the same person end up on two teams?",
+      "answer": "No. Each name is assigned exactly once, so every team's roster is disjoint and the rosters together contain your whole list. If you want someone in two groups, paste the name twice and the draw treats those as two entries."
+    },
+    {
+      "question": "Is this different from the random name picker on the home page?",
+      "answer": "Yes. The home page wheel is a [random name picker](/): one entry wins a single spin. This page divides a whole list into groups in one draw. Use the picker when you need one winner, this generator when you need everyone placed."
+    },
+    {
+      "question": "Can I weight entries or run elimination mode?",
+      "answer": "Not here, and not yet. Every name counts equally and each draw is independent; there are no weighted entries and no elimination mode that removes picked names. If you need a name gone for the rest of a session, delete the line and redraw. The [truth or dare wheel](/) and other presets work the same fair way."
+    },
+    {
+      "question": "Do I need an account, and is it really free?",
+      "answer": "No account and no payment. Splitting teams runs on your device for free, without a usage count — the whole site works this way: no plans, no ads, no sign-up."
+    },
+    {
+      "question": "What can I use instead for a single random pick or a number?",
+      "answer": "For one winner, use the wheel on the home page. For a random number, the [random number wheel](/) preset covers 1–10 or a custom range, and dice and coin-flip presets are one click away there too."
+    }
+  ],
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Spin the Wheel Random Team Generator",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "description": "Splits a pasted name list into balanced random teams in the browser, free and without sign-up.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+}

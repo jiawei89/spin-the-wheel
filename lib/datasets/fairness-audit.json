@@ -1,0 +1,38 @@
+{
+  "collection": "fairness-audit",
+  "observedAt": "2026-11-27",
+  "method": "100,000 spins drawn with crypto.getRandomValues rejection sampling via lib/wheel-engine.ts pickIndex; entries weighted equally",
+  "spins": 100000,
+  "entries": [
+    "Maya",
+    "Leo",
+    "Priya",
+    "Sam",
+    "Aisha",
+    "Diego",
+    "Nora",
+    "Kai"
+  ],
+  "counts": [
+    12227,
+    12350,
+    12632,
+    12512,
+    12372,
+    12614,
+    12649,
+    12644
+  ],
+  "expectedSharePct": 12.5,
+  "observedSharePct": [
+    12.227,
+    12.35,
+    12.632,
+    12.512,
+    12.372,
+    12.614,
+    12.649,
+    12.644
+  ],
+  "maxDeviationPct": 0.273
+}

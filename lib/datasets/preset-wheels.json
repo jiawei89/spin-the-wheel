@@ -1,0 +1,211 @@
+{
+  "collection": "preset-wheels",
+  "observedAt": "2026-11-27",
+  "recordCount": 12,
+  "records": [
+    {
+      "id": "yes-no",
+      "title": "Yes / No",
+      "description": "Settle a small call out loud: load it and let the wheel answer.",
+      "entries": [
+        "Yes",
+        "No",
+        "Maybe"
+      ],
+      "useCase": "deadlocked groups"
+    },
+    {
+      "id": "numbers-1-10",
+      "title": "Numbers 1–10",
+      "description": "A fair ten-way pick for who goes first or which question is next.",
+      "entries": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "useCase": "order and turns"
+    },
+    {
+      "id": "custom-range",
+      "title": "Custom range",
+      "description": "Any run of numbers you set, from question numbering to prize draws.",
+      "entries": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "useCase": "numbered draws"
+    },
+    {
+      "id": "dice-1-6",
+      "title": "Dice 1–6",
+      "description": "A die the whole room can see, for board games that lost theirs.",
+      "entries": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "useCase": "board games"
+    },
+    {
+      "id": "coin-flip",
+      "title": "Coin flip",
+      "description": "Heads or tails, visible from the back of the classroom.",
+      "entries": [
+        "Heads",
+        "Tails"
+      ],
+      "useCase": "two-way calls"
+    },
+    {
+      "id": "letters",
+      "title": "Letters A–Z",
+      "description": "Twenty-six segments for word games and letter-of-the-day.",
+      "entries": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U",
+        "V",
+        "W",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "useCase": "word games"
+    },
+    {
+      "id": "truth-or-dare",
+      "title": "Truth or Dare",
+      "description": "The party classic with a referee nobody can argue with.",
+      "entries": [
+        "Truth",
+        "Dare"
+      ],
+      "useCase": "parties"
+    },
+    {
+      "id": "what-to-eat",
+      "title": "What to eat",
+      "description": "End the takeout debate with one spin of eight dinners.",
+      "entries": [
+        "Pizza",
+        "Tacos",
+        "Sushi",
+        "Burgers",
+        "Salad",
+        "Ramen",
+        "Curry",
+        "Pasta"
+      ],
+      "useCase": "group dinners"
+    },
+    {
+      "id": "numbers-1-20",
+      "title": "Numbers 1–20",
+      "description": "Twenty fair segments for bigger classes, squads and lucky draws.",
+      "entries": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20"
+      ],
+      "useCase": "bigger classes"
+    },
+    {
+      "id": "weekdays",
+      "title": "Weekday picker",
+      "description": "Settle which day it happens — a fair pick across the week.",
+      "entries": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "useCase": "scheduling"
+    },
+    {
+      "id": "chores",
+      "title": "Chores",
+      "description": "Share the housework without the argument: spin for this week's jobs.",
+      "entries": [
+        "Dishes",
+        "Vacuum",
+        "Laundry",
+        "Trash",
+        "Bathroom",
+        "Cooking",
+        "Yard",
+        "Pet care"
+      ],
+      "useCase": "household turns"
+    },
+    {
+      "id": "prize-draw",
+      "title": "Prize draw",
+      "description": "Draw raffle winners one at a time and remove each as it lands.",
+      "entries": [
+        "Ticket 1",
+        "Ticket 2",
+        "Ticket 3",
+        "Ticket 4",
+        "Ticket 5",
+        "Ticket 6",
+        "Ticket 7",
+        "Ticket 8"
+      ],
+      "useCase": "raffles and draws"
+    }
+  ]
+}

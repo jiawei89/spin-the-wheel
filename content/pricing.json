@@ -1,0 +1,111 @@
+{
+  "title": "Pricing – Spin the Wheel pricing",
+  "description": "Spin the Wheel is completely free: paste entries, spin the wheel, split teams and share results — no account, no ads, nothing to buy.",
+  "h1": "Spin the Wheel pricing",
+  "heroText": "Everything on this site is free. Paste your entries and [spin the wheel](/), split a name list with the [random team generator](/random-team-generator/) and audit the results — all in your browser, with no account and no ads. There is no paid plan, so there is nothing to check out.",
+  "ctas": [
+    {
+      "label": "Spin the wheel now",
+      "href": "/",
+      "primary": true
+    }
+  ],
+  "sections": [
+    {
+      "id": "plans",
+      "title": "One plan: free",
+      "body": "The whole tool set is the free plan. There is no paid tier on this site today, so there is no billing cycle, no card and no trial to remember to cancel.",
+      "items": [
+        {
+          "title": "Free",
+          "body": "The wheel, the presets, the random team generator and the fairness audit run on your device, with no sign-in, no ads and no usage count. What you save stays on your device and in the links you copy."
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "title": "What's included",
+      "body": "Everything the tool can do is included in the free plan.",
+      "table": {
+        "caption": "What the free plan includes",
+        "columns": ["What you get", "Included"],
+        "rows": [
+          { "cells": ["Wheel spins and entries", "Unlimited, in your browser"] },
+          { "cells": ["Elimination, accumulation and weighted modes", "Included"] },
+          { "cells": ["Preset wheels (yes/no, dice, coin, numbers, custom range)", "Included"] },
+          { "cells": ["Random team generator", "Included"] },
+          { "cells": ["Fairness audit (10,000 spins)", "Included"] },
+          { "cells": ["Saving a wheel", "On this device, no account"] },
+          { "cells": ["Share links and CSV export", "Included, no account"] },
+          { "cells": ["Themes and sounds", "Included"] },
+          { "cells": ["Price", "$0"] }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "title": "Questions about free use",
+      "body": "The short answers on what free means here."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is Spin the Wheel really free?",
+      "answer": "Yes. Every tool on the site — the wheel, the presets, the random team generator and the fairness audit — runs in your browser at no cost, with no ads. There is no paid plan, so there is no card to add and no trial to remember to cancel."
+    },
+    {
+      "question": "Do I need an account?",
+      "answer": "No. The tools run on your device. A wheel you save stays in your browser's local storage, and share links carry your entries in the URL itself, so nothing has to be stored on a server for the wheel to work."
+    },
+    {
+      "question": "How do I keep or share a wheel?",
+      "answer": "Use Share link on the wheel to copy a URL that encodes your entries and settings, or Export to download them as a CSV file. Both work without an account."
+    },
+    {
+      "question": "Will paid plans come later?",
+      "answer": "Paid plans are not for sale on this site today. If that ever changes, this page and the [terms](/terms/) will describe the billing, cancellation and refund rules before anything is charged."
+    }
+  ],
+  "schema": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is Spin the Wheel really free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Every tool on the site — the wheel, the presets, the random team generator and the fairness audit — runs in your browser at no cost, with no ads. There is no paid plan, so there is no card to add and no trial to remember to cancel."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need an account?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The tools run on your device. A wheel you save stays in your browser's local storage, and share links carry your entries in the URL itself, so nothing has to be stored on a server for the wheel to work."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I keep or share a wheel?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use Share link on the wheel to copy a URL that encodes your entries and settings, or Export to download them as a CSV file. Both work without an account."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will paid plans come later?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Paid plans are not for sale on this site today. If that ever changes, the pricing page and the terms will describe the billing, cancellation and refund rules before anything is charged."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

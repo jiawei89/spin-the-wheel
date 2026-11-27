@@ -1,0 +1,15 @@
+{
+  "title": "Preset wheels – Spin the Wheel",
+  "description": "Twelve ready-made wheels: yes or no, coin flip, dice, numbers, letters, chores, prizes and more. Open one and it is loaded, ready to spin, yours to edit.",
+  "h1": "Preset wheels",
+  "heroText": "Every wheel here is loaded with its entries and ready to turn. Open one, spin it, and edit any entry into your own words — no account needed. The wheel runs in your browser, and everything stays on your device.",
+  "ctas": [],
+  "sections": [
+    {
+      "id": "about-presets",
+      "title": "What a preset wheel is",
+      "body": "A preset wheel is the whole Spin the Wheel tool with a list already typed in: the [yes or no wheel](/wheels/yes-no/) carries its two answers, the [dice wheel](/wheels/dice-1-6/) carries six numbers, the [chores wheel](/wheels/chores/) carries eight jobs. Every preset runs the same engine, the same 2 to 5 second turn, and the same share, export and fullscreen controls as the [home wheel](/) — the only difference is the list you start from.\n\nChanging a preset into your own wheel takes seconds: edit the entries in the panel, add ×2 to a line to weight it up, or replace the whole list. To build a list of your own from scratch, [open the full wheel](/) — and if you want to know why the result can be trusted, the [fairness page](/randomness/) shows the mechanism and an audit you can run yourself."
+    }
+  ],
+  "faq": []
+}

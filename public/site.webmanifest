@@ -1,0 +1,16 @@
+{
+  "name": "Spin the Wheel",
+  "short_name": "Spin the Wheel",
+  "description": "Spin the wheel to pick a random name, number, or winner. Free, no sign-up, and nothing covers your result.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#14231c",
+  "theme_color": "#14231c",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ]
+}
